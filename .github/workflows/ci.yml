@@ -1,3 +1,18 @@
+# This file configure a GitHub workflow responsible to perform
+# various checks related to the codebase.
+#
+# For that reason it's runned on every pull request and commit to master.
+#
+# It does the following:
+#  - Check linting passes (no eslint error on files)
+#  - Run unit tests and ensure none is failing
+#  - Update unit test code coverage
+#
+# If all these steps are passing the workflow ends up
+# publishing package on npm if needed. It will publish the npm package
+# using the token found in secrets.NPM_TOKEN. Be sure to create this
+# token in the GitHub repository.
+
 name: ci
 
 on:
@@ -58,7 +73,6 @@ jobs:
       - name: publish package
         run: node --experimental-top-level-await ./.github/release/publish-package.js
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
       - name: ensure github release
         run: node --experimental-top-level-await ./.github/release/ensure-github-release-for-package.js
