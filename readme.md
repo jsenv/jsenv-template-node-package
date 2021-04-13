@@ -12,6 +12,11 @@ Template to create a GitHub repository for a node package.
 
 - [Presentation](#Presentation)
 - [Installation](#Installation)
+- [Coding](#Coding)
+- [Formatting](#Formatting)
+- [Linting](#Linting)
+- [Testing](#Testing)
+- [Building](#Building)
 
 # Presentation
 
