@@ -42,7 +42,14 @@ npm install
 
 # Coding
 
-While coding it's recommended to use [VSCode integrated debugging](https://code.visualstudio.com/docs/nodejs/nodejs-debugging) to ensure code works as expected.
+While coding, you can simply use `node` command to execute the file. But you will likely prefer to execute file using [VSCode integrated debugger for Node.js](https://code.visualstudio.com/docs/nodejs/nodejs-debugging). This repository contains a pre-defined launch configuration for VSCode at [.vscode/launch.json#L2](./.vscode/launch.json#L5). It's a classic node configuration enabling some flags like [--experimental-top-level-await](https://nodejs.org/docs/latest-v14.x/api/cli.html#cli_experimental_repl_await)
+
+<details>
+  <summary>See VSCode debugging a Node.js file</summary>
+
+![Screencast of debugging a Node.js file in VSCode](./docs/vscode-node-debug.gif)
+
+</details>
 
 # Formatting
 
