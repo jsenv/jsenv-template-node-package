@@ -8,8 +8,8 @@
   ],
   "sourcesContent": [
     "export const message = \"Hello world\"\n",
-    "import { message } from \"src/internal/message.js\"\n\nexport const greet = () => {\n  return message\n}\n",
-    "import { message } from \"src/internal/message.js\"\n\nexport const greetAsync = async () => {\n  return message\n}\n"
+    "import { message } from \"@jsenv/template-node-package/src/internal/message.js\"\n\nexport const greet = () => {\n  return message\n}\n",
+    "import { message } from \"@jsenv/template-node-package/src/internal/message.js\"\n\nexport const greetAsync = async () => {\n  return message\n}\n"
   ],
   "names": [
     "message",
