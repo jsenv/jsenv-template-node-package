@@ -8,6 +8,7 @@
       "protocol": "inspector",
       "program": "${file}",
       "runtimeArgs": [
+        "--conditions=development",
         "--unhandled-rejections=strict",
         "--experimental-json-modules",
         "--experimental-top-level-await"

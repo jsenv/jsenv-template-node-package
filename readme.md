@@ -33,7 +33,7 @@ The following setup is recommended to install this repository:
 **Command line tools**:
 
 - [git](https://git-scm.com/) version 2.26.0 or above
-- [node](https://nodejs.org/en/) version 14.5.0 or above
+- [node](https://nodejs.org/en/) version 14.9.0 or above
 
 If setup is done, run the following commands to install the repository on your machine.
 

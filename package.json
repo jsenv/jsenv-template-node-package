@@ -16,11 +16,21 @@
   "type": "module",
   "exports": {
     ".": {
+      "development": {
+        "imports": "./main.dev.js",
+        "require": "./dist/commonjs/main.dev.cjs"
+      },
       "import": "./main.js",
       "require": "./dist/commonjs/main.cjs"
     },
     "./": "./",
     "./*": "./*"
+  },
+  "imports": {
+    "#env": {
+      "development": "./env.dev.js",
+      "import": "./env.prod.js"
+    }
   },
   "module": "main.js",
   "main": "dist/commonjs/main.cjs",

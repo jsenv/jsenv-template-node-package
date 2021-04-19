@@ -1,12 +1,18 @@
 import { buildProject, getBabelPluginMapForNode } from "@jsenv/core"
 import * as jsenvConfig from "../../jsenv.config.js"
 
-buildProject({
-  ...jsenvConfig,
-  format: "commonjs",
-  entryPointMap: {
-    "./main.js": "./main.cjs",
-  },
-  babelPluginMap: getBabelPluginMapForNode(),
-  buildDirectoryClean: true,
-})
+const build = async ({ dev = false }) => {
+  return buildProject({
+    ...jsenvConfig,
+    importMapFileRelativeUrl: dev ? "./importmap.dev.importmap" : "./importmap.prod.importmap",
+    format: "commonjs",
+    entryPointMap: {
+      "./main.js": dev ? "main.dev.cjs" : "./main.cjs",
+    },
+    babelPluginMap: getBabelPluginMapForNode(),
+    buildDirectoryClean: !dev,
+  })
+}
+
+await build({ dev: false })
+await build({ dev: true })
