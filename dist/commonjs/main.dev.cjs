@@ -5,6 +5,9 @@ Object.defineProperty(exports, '__esModule', { value: true });
 const message = "Hello world";
 
 const greet = () => {
+  {
+    console.info(`greet called`);
+  }
 
   return message;
 };
@@ -16,4 +19,4 @@ const greetAsync = async () => {
 exports.greet = greet;
 exports.greetAsync = greetAsync;
 
-//# sourceMappingURL=main.cjs.map
+//# sourceMappingURL=main.dev.cjs.map

@@ -1,6 +1,6 @@
 {
   "version": 3,
-  "file": "main.cjs",
+  "file": "main.dev.cjs",
   "sources": [
     "../../src/internal/message.js",
     "../../src/greet.js",
@@ -14,7 +14,9 @@
   "names": [
     "message",
     "greet",
+    "console",
+    "info",
     "greetAsync"
   ],
-  "mappings": ";;;;AAAO,MAAMA,OAAO,GAAG,aAAhB;;MCGMC,KAAK,GAAG,MAAM;;AAIzB,SAAOD,OAAP;AACD;;MCNYE,UAAU,GAAG,YAAY;AACpC,SAAOF,OAAP;AACD;;;;;"
+  "mappings": ";;;;AAAO,MAAMA,OAAO,GAAG,aAAhB;;MCGMC,KAAK,GAAG,MAAM;AACzB,EAAS;AACPC,IAAAA,OAAO,CAACC,IAAR,CAAc,cAAd;AACD;;AACD,SAAOH,OAAP;AACD;;MCNYI,UAAU,GAAG,YAAY;AACpC,SAAOJ,OAAP;AACD;;;;;"
 }

@@ -1,6 +1,6 @@
 {
   "name": "@jsenv/template-node-package",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Package description",
   "license": "MIT",
   "repository": {
@@ -61,7 +61,7 @@
     "@jsenv/core": "17.9.6",
     "@jsenv/eslint-config": "12.9.1",
     "@jsenv/github-release-package": "1.2.2",
-    "@jsenv/node-module-import-map": "13.2.1",
+    "@jsenv/node-module-import-map": "13.3.3",
     "@jsenv/package-publish": "1.5.2",
     "@jsenv/prettier-check-project": "5.6.1",
     "eslint": "7.24.0",
