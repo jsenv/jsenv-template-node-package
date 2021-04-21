@@ -1,7 +1,7 @@
 import { fork } from "child_process"
 import { fileURLToPath } from "url"
 
-export const executeChildProcess = (fileUrl, { dev }) => {
+export const executeChildProcess = (fileUrl, { dev = false } = {}) => {
   const executionPromise = new Promise((resolve, reject) => {
     const childProcess = fork(fileURLToPath(fileUrl), {
       execArgv: [...(dev ? ["--conditions=development"] : [])],

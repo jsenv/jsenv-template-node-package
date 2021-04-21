@@ -2,21 +2,15 @@
   "version": 3,
   "file": "main.dev.cjs",
   "sources": [
-    "../../src/internal/message.js",
-    "../../src/greet.js",
-    "../../src/greetAsync.js"
+    "../../src/message.js"
   ],
   "sourcesContent": [
-    "export const message = \"Hello world\"\n",
-    "import { dev } from \"#env\"\nimport { message } from \"./internal/message.js\"\n\nexport const greet = () => {\n  if (dev) {\n    console.info(`greet called`)\n  }\n  return message\n}\n",
-    "import { message } from \"./internal/message.js\"\n\nexport const greetAsync = async () => {\n  return message\n}\n"
+    "import { dev } from \"#env\"\n\nconst message = dev ? \"Hello dev!\" : \"Hello prod!\"\n\nexport const getMessage = () => {\n  return message\n}\n\nexport const getMessageAsync = async () => {\n  return message\n}\n"
   ],
   "names": [
     "message",
-    "greet",
-    "console",
-    "info",
-    "greetAsync"
+    "getMessage",
+    "getMessageAsync"
   ],
-  "mappings": ";;;;AAAO,MAAMA,OAAO,GAAG,aAAhB;;MCGMC,KAAK,GAAG,MAAM;AACzB,EAAS;AACPC,IAAAA,OAAO,CAACC,IAAR,CAAc,cAAd;AACD;;AACD,SAAOH,OAAP;AACD;;MCNYI,UAAU,GAAG,YAAY;AACpC,SAAOJ,OAAP;AACD;;;;;"
+  "mappings": ";;;;AAEA,MAAMA,OAAO,GAAS,YAAH,CAAnB;MAEaC,UAAU,GAAG,MAAM;AAC9B,SAAOD,OAAP;AACD;MAEYE,eAAe,GAAG,YAAY;AACzC,SAAOF,OAAP;AACD;;;;;"
 }

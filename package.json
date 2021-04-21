@@ -16,12 +16,11 @@
   "type": "module",
   "exports": {
     ".": {
-      "development": {
-        "import": "./main.dev.js",
-        "require": "./dist/commonjs/main.dev.cjs"
-      },
       "import": "./main.js",
-      "require": "./dist/commonjs/main.cjs"
+      "require": {
+        "development": "./dist/commonjs/main.dev.cjs",
+        "default": "./dist/commonjs/main.cjs"
+      }
     },
     "./": "./",
     "./*": "./*"

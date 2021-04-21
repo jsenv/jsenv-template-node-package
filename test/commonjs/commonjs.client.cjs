@@ -1,3 +1,10 @@
-const namespace = require("@jsenv/template-node-package")
+const { getMessage, getMessageAsync } = require("@jsenv/template-node-package")
 
-console.log(JSON.stringify(Object.keys(namespace)))
+getMessageAsync().then((messageAsync) => {
+  console.log(
+    JSON.stringify({
+      message: getMessage(),
+      messageAsync,
+    }),
+  )
+})

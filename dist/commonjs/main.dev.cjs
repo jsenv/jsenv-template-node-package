@@ -2,21 +2,15 @@
 
 Object.defineProperty(exports, '__esModule', { value: true });
 
-const message = "Hello world";
-
-const greet = () => {
-  {
-    console.info(`greet called`);
-  }
-
+const message = "Hello dev!" ;
+const getMessage = () => {
+  return message;
+};
+const getMessageAsync = async () => {
   return message;
 };
 
-const greetAsync = async () => {
-  return message;
-};
-
-exports.greet = greet;
-exports.greetAsync = greetAsync;
+exports.getMessage = getMessage;
+exports.getMessageAsync = getMessageAsync;
 
 //# sourceMappingURL=main.dev.cjs.map
