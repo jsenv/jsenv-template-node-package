@@ -65,26 +65,26 @@ console.log(getMessage())
 node ./example.js
 ```
 
-It would log `Hello prod!` in the terminal as shown in the screenshot below.
+It would log `Hello dev!` in the terminal as shown in the screenshot below.
 
-![screenshot of terminal after execution with node](./docs/node-terminal.png)
+![screenshot of terminal after execution with node](./TODO.png)
 
 </details>
 
 <details>
-  <summary>Development mode</summary>
+  <summary>Production mode</summary>
 
-This package have two mode: development and production. By default this package will use the production mode. But the development mode can be enabled using [--conditions=development](https://nodejs.org/docs/latest-v15.x/api/packages.html#packages_resolving_user_conditions).
+This package have two mode: development and production. By default this package is in development mode. development is the default mode to be in sync with Node.js where production must be enabled by `process.env.NODE_ENV=production`. production mode can be enabled using [--conditions=production](https://nodejs.org/docs/latest-v15.x/api/packages.html#packages_resolving_user_conditions).
 
 ```console
-node --conditions=development example.js
+node --conditions=production example.js
 ```
 
-![screenshot of terminal after execution with node and --condition=development](./docs/node-terminal-dev.png)
+![screenshot of terminal after execution with node and --condition=production](./TODO.png)
 
-> For this dumb package the effect of development mode is trivial. In a real package, development mode can provide additional logs and feature.
+> For this dumb package the effect of production mode is trivial. In a real package, development and production could have more important differences.
 
-> Feel free to remove the development mode if you don't need it.
+> Feel free to remove the production mode if you don't need it.
 
 </details>
 
