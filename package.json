@@ -17,7 +17,7 @@
   "exports": {
     ".": {
       "development": {
-        "imports": "./main.dev.js",
+        "import": "./main.dev.js",
         "require": "./dist/commonjs/main.dev.cjs"
       },
       "import": "./main.js",
@@ -54,7 +54,9 @@
     "prepublishOnly": "node ./script/transform-package/remove-postinstall.js && npm run dist",
     "postpublish": "node ./script/transform-package/restore-postinstall.js"
   },
-  "dependencies": {},
+  "dependencies": {
+    "@jsenv/util": "4.0.6"
+  },
   "devDependencies": {
     "@jsenv/assert": "2.2.5",
     "@jsenv/codecov-upload": "3.4.3",
