@@ -1,6 +1,6 @@
 {
   "version": 3,
-  "file": "main.cjs",
+  "file": "main.prod.cjs",
   "sources": [
     "../../src/message.js"
   ],

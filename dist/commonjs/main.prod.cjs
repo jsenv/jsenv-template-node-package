@@ -13,4 +13,4 @@ const getMessageAsync = async () => {
 exports.getMessage = getMessage;
 exports.getMessageAsync = getMessageAsync;
 
-//# sourceMappingURL=main.cjs.map
+//# sourceMappingURL=main.prod.cjs.map

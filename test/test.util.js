@@ -1,10 +1,9 @@
 import { fork } from "child_process"
 import { fileURLToPath } from "url"
 
-export const executeChildProcess = (fileUrl, { dev = false } = {}) => {
+export const executeChildProcess = (fileUrl) => {
   const executionPromise = new Promise((resolve, reject) => {
     const childProcess = fork(fileURLToPath(fileUrl), {
-      execArgv: [...(dev ? ["--conditions=development"] : [])],
       stdio: "pipe",
     })
     const stdout = []
@@ -27,4 +26,26 @@ export const executeChildProcess = (fileUrl, { dev = false } = {}) => {
     })
   })
   return executionPromise
+}
+
+export const getProcessArgument = (argumentName) => {
+  let i = 0
+
+  const argArray = process.execArgv
+
+  while (i < argArray.length) {
+    const argCandidate = argArray[i]
+
+    if (argCandidate === argumentName) {
+      return ""
+    }
+
+    if (argCandidate.startsWith(`${argumentName}=`)) {
+      return argCandidate.slice(`${argumentName}=`.length)
+    }
+
+    i++
+  }
+
+  return null
 }

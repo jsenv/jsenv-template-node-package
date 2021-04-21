@@ -18,8 +18,8 @@
     ".": {
       "import": "./main.js",
       "require": {
-        "development": "./dist/commonjs/main.dev.cjs",
-        "default": "./dist/commonjs/main.cjs"
+        "production": "./dist/commonjs/main.prod.cjs",
+        "default": "./dist/commonjs/main.dev.cjs"
       }
     },
     "./": "./",
@@ -27,8 +27,8 @@
   },
   "imports": {
     "#env": {
-      "development": "./env.dev.js",
-      "import": "./env.prod.js"
+      "production": "./env.prod.js",
+      "default": "./env.dev.js"
     }
   },
   "module": "main.js",
@@ -59,10 +59,10 @@
   "devDependencies": {
     "@jsenv/assert": "2.2.5",
     "@jsenv/codecov-upload": "3.4.3",
-    "@jsenv/core": "17.9.6",
+    "@jsenv/core": "17.9.7",
     "@jsenv/eslint-config": "12.9.1",
     "@jsenv/github-release-package": "1.2.2",
-    "@jsenv/node-module-import-map": "13.3.3",
+    "@jsenv/node-module-import-map": "13.3.4",
     "@jsenv/package-publish": "1.5.2",
     "@jsenv/prettier-check-project": "5.6.1",
     "eslint": "7.24.0",
