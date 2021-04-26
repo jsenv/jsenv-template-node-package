@@ -5,7 +5,7 @@ Template to create a GitHub repository for a node package.
 **Warning**: It's a beta version.
 
 [![npm package](https://img.shields.io/npm/v/@jsenv/template-node-package.svg?logo=npm&label=package)](https://www.npmjs.com/package/@jsenv/template-node-package)
-[![github ci](https://github.com/jsenv/jsenv-template-node-package/workflows/ci/badge.svg)](https://github.com/jsenv/jsenv-template-node-package/actions?workflow=ci)
+[![github main](https://github.com/jsenv/jsenv-template-node-package/workflows/main/badge.svg)](https://github.com/jsenv/jsenv-template-node-package/actions?workflow=main)
 [![codecov coverage](https://codecov.io/gh/jsenv/jsenv-template-node-package/branch/master/graph/badge.svg)](https://codecov.io/gh/jsenv/jsenv-template-node-package)
 
 # Table of contents
