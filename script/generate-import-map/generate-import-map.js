@@ -30,6 +30,6 @@ generateFile("importmap.prod.test.importmap", {
   // and avoid parsing js files are tests would not be found
   // also we want to favor "production" over "development" in package exports
   projectPackageDevDependenciesIncluded: true,
-  jsFiles: false,
+  treeshakeMappings: false,
   packageConditionDevelopment: false,
 })
