@@ -11,6 +11,8 @@ const { createEslintConfig } = require("@jsenv/eslint-config")
 const config = createEslintConfig({
   projectDirectoryUrl: __dirname,
 
+  // Tell ESLint to use the importmap to resolve imports.
+  // Read more in https://github.com/jsenv/jsenv-node-module-import-map#Configure-vscode-and-eslint-for-importmap
   importResolutionMethod: "import-map",
   importMapFileRelativeUrl: "./importmap.dev.importmap",
 

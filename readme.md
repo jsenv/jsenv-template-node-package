@@ -10,14 +10,22 @@ Template to create a GitHub repository for a node package.
 
 # Table of contents
 
+- [Template introduction](#Template-introduction)
 - [Presentation](#Presentation)
 - [Usage](#Usage)
 - [API](#API)
-- [Contributing](#Contributing)
+- [Development lifecyle](#Development-lifecycle)
+
+# Template introduction
+
+This repository is a [GitHub repository template](https://docs.github.com/en/github-ae@latest/github/creating-cloning-and-archiving-repositories/creating-a-repository-from-a-template#creating-a-repository-from-a-template). It is meant to be used as a starting point to create a node package published on npm. This repository publishes a basic npm package for demonstration purposes: `@jsenv/template-node-package`.
+
+This readme has two purposes:
+
+1. Document how to use `@jsenv/template-node-package` (the package published on npm)
+2. Document how to use the GitHub repository template in the [Contributing](#Contributing) section.
 
 # Presentation
-
-This is a dumb node package published on npm used to demonstrate this [GitHub repository template](https://docs.github.com/en/github-ae@latest/github/creating-cloning-and-archiving-repositories/creating-a-repository-from-a-template#creating-a-repository-from-a-template).
 
 ```js
 import { getMessage } from "@jsenv/template-node-package"
@@ -88,9 +96,14 @@ node --conditions=production example.js
 
 </details>
 
-# Contributing
+# Development lifecycle
 
-The following setup is required to install this repository on your machine:
+If you want to work on this project, read this documentation. It describes all the expected steps from the moment you start coding to the moment a new version is published on npm. This documentation also explains how to configure and use the tools available in the project.
+
+<details>
+  <summary>1. Setup</summary>
+
+The following setup is recommended to install this repository on your machine:
 
 **Operating System**: Mac, Linux or Windows.
 
@@ -111,7 +124,40 @@ git clone git@github.com:jsenv/jsenv-template-node-package.git
 npm install
 ```
 
-## Coding
+</details>
+
+At this point, the GitHub repository is on your machine. You can open a file and modify its content. The first thing that should happen then is linting and formatting.
+
+<details>
+  <summary>2. Linting</summary>
+
+TODO: explain how to configure ESLint
+
+The codebase uses ESLint to lint files. The ESLint configuration can be found in [.eslintrc.cjs](./.eslintrc.cjs). The ESLint configuration consider all files as written for a browser except thoose inside `script/` and `github/` directories. The rest of the configuration comes from [@jsenv/eslint-config](https://github.com/jsenv/jsenv-eslint-config#eslint-config).
+
+If ESLint rules are not respected, the main **GitHub workflow will fail** during [code quality step](./.github/workflows/ci.yml#L45).
+
+You can run `npm run eslint-check` to ensure your file respects ESLint rules. It is recommended to install and use [vscode-eslint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint) to have ESLint integrated in VSCode.
+
+</details>
+
+## Formatting
+
+TODO: explain how to configure prettier
+
+The codebase uses prettier to ensure a coherent and pretty code formatting. The prettier configuration can be found in [.prettierrc.yml](./.prettierrc.yml).
+
+If prettier configuration is not respected, the main **GitHub workflow will log** which files are incorrect during [code format step](./.github/workflows/ci.yml#L33). I repeat, the workflow will not fail, just log.
+
+You are supposed to perform the code formatting, in other words install [prettier-vscode](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode) and let the extension do it when you save a file.
+
+## Execution
+
+TODO: how to execute
+
+## Debugging
+
+TODO: rephrase how to debug
 
 While coding, you can simply use `node` command to execute the file. But you will likely prefer to execute file using [VSCode integrated debugger for Node.js](https://code.visualstudio.com/docs/nodejs/nodejs-debugging). This repository contains a pre-defined launch configuration for VSCode at [.vscode/launch.json#L2](./.vscode/launch.json#L5). It's a classic node configuration enabling some flags like [--experimental-top-level-await](https://nodejs.org/docs/latest-v14.x/api/cli.html#cli_experimental_repl_await)
 
@@ -122,23 +168,9 @@ While coding, you can simply use `node` command to execute the file. But you wil
 
 </details>
 
-## Formatting
-
-The codebase uses prettier to ensure a coherent and pretty code formatting. The prettier configuration can be found in [.prettierrc.yml](./.prettierrc.yml).
-
-If prettier configuration is not respected, the main **GitHub workflow will log** which files are incorrect during [code format step](./.github/workflows/ci.yml#L33). I repeat, the workflow will not fail, just log.
-
-You are supposed to perform the code formatting, in other words install [prettier-vscode](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode) and let the extension do it when you save a file.
-
-## Linting
-
-The codebase uses ESLint to lint files. The ESLint configuration can be found in [.eslintrc.cjs](./.eslintrc.cjs). The ESLint configuration consider all files as written for a browser except thoose inside `script/` and `github/` directories. The rest of the configuration comes from [@jsenv/eslint-config](https://github.com/jsenv/jsenv-eslint-config#eslint-config).
-
-If ESLint rules are not respected, the main **GitHub workflow will fail** during [code quality step](./.github/workflows/ci.yml#L45).
-
-You can run `npm run eslint-check` to ensure your file respects ESLint rules. It is recommended to install and use [vscode-eslint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint) to have ESLint integrated in VSCode.
-
 ## Testing
+
+TODO: more context around testing, explaining how they are working and why
 
 Test are inside [test/](./test/) directory.
 
@@ -150,11 +182,14 @@ Read more in [jsenv testing documentation](https://github.com/jsenv/jsenv-core#t
 
 ## Building
 
+TODO: explain the commonjs build and how to remove it if not needed
+
 In order to generate files that will be published on npm use `npm run dist`. This will generate files into [dist/](./dist/) directory.
 
 The files will be generated in `commonjs` to allow consumer of the package to use `require` on it. It means [main.js](./main.js) written using standard ES module format is converted into CommonJS module format and written at [dist/commonjs/main.cjs](./dist/commonjs/main.cjs).
 
 Read more in [jsenv building documentation](https://github.com/jsenv/jsenv-core/blob/master/docs/building/readme.md#Building-a-nodejs-package).
 
-TODO: explain the two builds (one for prod, one for dev)
+## Publishing on npm
+
 TODO: explain the github workflow (it's auto publishing on npm)
