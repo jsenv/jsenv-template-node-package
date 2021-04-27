@@ -1,3 +1,5 @@
+<!-- inspired from https://github.com/github/docs/blob/main/contributing/development.md -->
+
 # Development
 
 If you want to work on this project, read this documentation. It describes all the expected steps from the moment you start coding to the moment a new version is published on npm. This documentation also explains how to configure and use the tools available in the repository.
@@ -89,6 +91,8 @@ You can debug a file using [VSCode integrated debugger for Node.js](https://code
 You can also use any debugging recipe documented in [Node.js debugging guide](https://nodejs.org/en/docs/guides/debugging-getting-started)
 
 # Testing
+
+<!-- https://github.com/github/docs/blob/main/tests/README.md -->
 
 ## Writing tests
 

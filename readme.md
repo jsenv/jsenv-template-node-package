@@ -15,6 +15,7 @@ Node package description.
 - [Installation](#Installation)
 - [Example](#Example)
 - [API](#API)
+- [Production mode](#production-mode)
 
 # Presentation
 
@@ -68,19 +69,47 @@ It would log `Hello dev!` in the terminal as shown in the screenshot below.
 
 </details>
 
+</details>
+
+# API
+
+## getMessage
+
+`getMessage` is a function returning a string. The returned string is different depending in [production mode](#production-mode)
+
 <details>
-  <summary>Production mode</summary>
+  <summary>getMessage code example</summary>
 
-This package have two mode: development and production. By default this package is in development mode. development is the default mode to be in sync with Node.js where production must be enabled by `process.env.NODE_ENV=production`. production mode can be enabled using [--conditions=production](https://nodejs.org/docs/latest-v15.x/api/packages.html#packages_resolving_user_conditions).
+```js
+import { getMessage } from "@jsenv/template-node-package"
 
-```console
-node --conditions=production example.js
+const message = getMessage()
+message // "Hello dev!"
 ```
 
-![screenshot of terminal after execution with node and --condition=production](./TODO.png)
+</details>
 
-> For this dumb package the effect of production mode is trivial. In a real package, development and production could have more important differences.
+## getMessageAsync
 
-> Feel free to remove the production mode if you don't need it.
+`getMessageAsync` is like [getMessage](#getMessage) except it's an async function.
+
+<details>
+  <summary>getMessageAsync code example</summary>
+
+```js
+import { getMessageAsync } from "@jsenv/template-node-package"
+
+const message = await getMessageAsync()
+message // "Hello dev!"
+```
 
 </details>
+
+# Production mode
+
+This package have two mode: `development` and `production`. By default this package is in `development` mode.
+
+`production` mode can be enabled using [--conditions=production](https://nodejs.org/docs/latest-v15.x/api/packages.html#packages_resolving_user_conditions) when executing the code with the node command.
+In `production` mode [getMessage](#getmessage) and [getMessageAsync](#getMessageAsync) return a different string: `"Hello prod!"`
+
+> The effect of `production` mode is trivial because it's a dumb package. With a real package, `development` and `production` would have more important differences.
