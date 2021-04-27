@@ -166,46 +166,82 @@ npm run eslint-check
 
 </details>
 
-## Formatting
-
-TODO: explain how to configure prettier
-
-The codebase uses prettier to ensure a coherent and pretty code formatting. The prettier configuration can be found in [.prettierrc.yml](./.prettierrc.yml).
-
-If prettier configuration is not respected, the main **GitHub workflow will log** which files are incorrect during [code format step](./.github/workflows/ci.yml#L33). I repeat, the workflow will not fail, just log.
-
-You are supposed to perform the code formatting, in other words install [prettier-vscode](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode) and let the extension do it when you save a file.
-
-## Execution
-
-TODO: how to execute
-
-## Debugging
-
-TODO: rephrase how to debug
-
-While coding, you can simply use `node` command to execute the file. But you will likely prefer to execute file using [VSCode integrated debugger for Node.js](https://code.visualstudio.com/docs/nodejs/nodejs-debugging). This repository contains a pre-defined launch configuration for VSCode at [.vscode/launch.json#L2](./.vscode/launch.json#L5). It's a classic node configuration enabling some flags like [--experimental-top-level-await](https://nodejs.org/docs/latest-v14.x/api/cli.html#cli_experimental_repl_await)
-
 <details>
-  <summary>See VSCode debugging a Node.js file</summary>
+  <summary>4. Formatting</summary>
 
-![Screencast of debugging a Node.js file in VSCode](./docs/vscode-node-debug.gif)
+The codebase uses [prettier](https://prettier.io) to ensure a coherent and pretty code formatting. Formatting takes time and is more consistent when done by a tool, here prettier. Install [prettier-vscode](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode) and **let the extension do the formatting** when you save a file.
+
+The prettier configuration can be found in [.prettierrc.yml](./.prettierrc.yml).
+
+If prettier configuration is not respected, the main **GitHub workflow will log** which files are incorrect during [code format step](./.github/workflows/ci.yml#L33).
 
 </details>
 
-## Testing
+<details>
+  <summary>5. Debug code</summary>
 
-TODO: more context around testing, explaining how they are working and why
+You can debug a file using [VSCode integrated debugger for Node.js](https://code.visualstudio.com/docs/nodejs/nodejs-debugging). This repository contains a pre-defined launch configuration for VSCode at [.vscode/launch.json#L2](./.vscode/launch.json#L5). It's a classic node configuration enabling some flags like [--experimental-top-level-await](https://nodejs.org/docs/latest-v14.x/api/cli.html#cli_experimental_repl_await)
 
-Test are inside [test/](./test/) directory.
+![Screencast of debugging a Node.js file in VSCode](./docs/vscode-node-debug.gif)
 
-They can be runned all at once using `npm test`.
+You can also use any debugging recipe documented in [Node.js debugging guide](https://nodejs.org/en/docs/guides/debugging-getting-started)
 
-They can be runned selectively in node by executing the file directly with the `node` command or with VSCode debugger as documented in [coding](#coding)
+</details>
 
-Read more in [jsenv testing documentation](https://github.com/jsenv/jsenv-core#testing)
+<details>
+  <summary>6. Write a test</summary>
 
-## Building
+This part explains how to write a test. You don't have to write a test for every line of code, choose wisely.
+
+Your test file must end with `.test.js` and be inside the [test/](./test/) directory.
+
+Each test is configured to run twice:
+
+- First with the default behaviour of the `node` command
+- Secondly with `--conditions=production` parameter
+
+This ensure both the development and production code path are tested.
+
+All this is configured in [script/test/test.js](./script/test/test.js#L7). Read more in [jsenv testing documentation](https://github.com/jsenv/jsenv-core/blob/master/docs/testing/readme.md#test-execution)
+
+</details>
+
+<details>
+  <summary>7. Execute test</summary>
+
+To execute a single test, use directly the `node` command or VSCode debugger as documented in the previous part.
+
+To execute all tests at once, use the following command
+
+```console
+npm test
+```
+
+</details>
+
+<details>
+  <summary>8. Create a pull request</summary>
+
+See [Creating a pull request](https://docs.github.com/en/github/collaborating-with-issues-and-pull-requests/creating-a-pull-request) on GitHub documentation.
+
+Once the pull request is opened, the GitHub workflow [main.yml](./.github/workflows/main.yml) will run to check several things.
+
+- ESLint
+
+- Prettier
+
+- Unit test
+
+- Code coverage
+
+For informational purposes, a bot is posting a code coverage comment in every pull request.
+
+![Screenshot of codecov pull request comment](./docs/codecov-comment.png)
+
+</details>
+
+<details>
+  <summary>8. Publish on npm</summary>
 
 TODO: explain the commonjs build and how to remove it if not needed
 
@@ -213,8 +249,8 @@ In order to generate files that will be published on npm use `npm run dist`. Thi
 
 The files will be generated in `commonjs` to allow consumer of the package to use `require` on it. It means [main.js](./main.js) written using standard ES module format is converted into CommonJS module format and written at [dist/commonjs/main.cjs](./dist/commonjs/main.cjs).
 
-Read more in [jsenv building documentation](https://github.com/jsenv/jsenv-core/blob/master/docs/building/readme.md#Building-a-nodejs-package).
-
-## Publishing on npm
+Read more in [jsenv building documentation](https://github.com/jsenv/jsenv-core/blob/master/docs/building/readme.md#Building-a-nodejs-package).å
 
 TODO: explain the github workflow (it's auto publishing on npm)
+
+</details>
