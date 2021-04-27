@@ -234,7 +234,7 @@ Once the pull request is opened, the GitHub workflow [main.yml](./.github/workfl
 
 - Code coverage
 
-For informational purposes, a bot is posting a code coverage comment in every pull request.
+For informational purposes, a bot is posting a code coverage comment in the pull request.
 
 ![Screenshot of codecov pull request comment](./docs/codecov-comment.png)
 
