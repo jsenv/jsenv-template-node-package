@@ -98,7 +98,7 @@ node --conditions=production example.js
 
 # Development lifecycle
 
-If you want to work on this project, read this documentation. It describes all the expected steps from the moment you start coding to the moment a new version is published on npm. This documentation also explains how to configure and use the tools available in the project.
+If you want to work on this project, read this documentation. It describes all the expected steps from the moment you start coding to the moment a new version is published on npm. This documentation also explains how to configure and use the tools available in the repository.
 
 <details>
   <summary>1. Setup</summary>
@@ -121,23 +121,48 @@ git clone git@github.com:jsenv/jsenv-template-node-package.git
 ```
 
 ```console
+cd ./jsenv-template-node-package
+```
+
+```console
 npm install
+```
+
+Now you can open VSCode to start coding
+
+```console
+code .
 ```
 
 </details>
 
-At this point, the GitHub repository is on your machine. You can open a file and modify its content. The first thing that should happen then is linting and formatting.
+<details>
+  <summary>2. Start coding</summary>
+
+Create a branch using git command
+
+```console
+git checkout -b branch-name
+```
+
+Then you can open a file and modify its content. The first thing that should happen then is linting and formatting.
+
+</details>
 
 <details>
-  <summary>2. Linting</summary>
+  <summary>3. Linting</summary>
 
-TODO: explain how to configure ESLint
+The codebase uses [ESLint](https://eslint.org) to lint files. It is recommended to install and use [vscode-eslint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint) to have **ESLint integrated in VSCode**.
 
-The codebase uses ESLint to lint files. The ESLint configuration can be found in [.eslintrc.cjs](./.eslintrc.cjs). The ESLint configuration consider all files as written for a browser except thoose inside `script/` and `github/` directories. The rest of the configuration comes from [@jsenv/eslint-config](https://github.com/jsenv/jsenv-eslint-config#eslint-config).
+The ESLint configuration can be found in [.eslintrc.cjs](./.eslintrc.cjs). The ESLint configuration consider all files as written for Node.js. The rest of the configuration comes from [@jsenv/eslint-config](https://github.com/jsenv/jsenv-eslint-config#eslint-config).
 
-If ESLint rules are not respected, the main **GitHub workflow will fail** during [code quality step](./.github/workflows/ci.yml#L45).
+If ESLint rules are not respected, the main **GitHub workflow will fail** during [code quality step](./.github/workflows/main.yml#L45).
 
-You can run `npm run eslint-check` to ensure your file respects ESLint rules. It is recommended to install and use [vscode-eslint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint) to have ESLint integrated in VSCode.
+You can also run a command to check all your file against ESLint rules:
+
+```console
+npm run eslint-check
+```
 
 </details>
 
