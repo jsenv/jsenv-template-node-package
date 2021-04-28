@@ -58,41 +58,15 @@ git checkout -b branch-name
 
 Then you can open a file and modify its content. The first thing that should happen then is linting and formatting.
 
-# Linting
-
-The codebase uses [ESLint](https://eslint.org) to lint files. It is recommended to install and use [vscode-eslint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint) to have **ESLint integrated in VSCode**.
-
-The ESLint configuration can be found in [.eslintrc.cjs](./.eslintrc.cjs). The ESLint configuration consider all files as written for Node.js. The rest of the configuration comes from [@jsenv/eslint-config](https://github.com/jsenv/jsenv-eslint-config#eslint-config).
-
-If ESLint rules are not respected, the main **GitHub workflow will fail** during [code quality step](./.github/workflows/main.yml#L45).
-
-You can also run a command to check all your file against ESLint rules:
-
-```console
-npm run eslint-check
-```
-
-# Formatting
-
-The codebase uses [prettier](https://prettier.io) to ensure a coherent and pretty code formatting. Formatting takes time and is more consistent when done by a tool, here prettier. Install [prettier-vscode](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode) and **let the extension do the formatting** when you save a file.
-
-The prettier configuration can be found in [.prettierrc.yml](./.prettierrc.yml).
-
-If prettier configuration is not respected, the main **GitHub workflow will log** which files are incorrect during [code format step](./.github/workflows/ci.yml#L33).
-
-</details>
-
 # Debugging
 
 You can debug a file using [VSCode integrated debugger for Node.js](https://code.visualstudio.com/docs/nodejs/nodejs-debugging). This repository contains a pre-defined launch configuration for VSCode at [.vscode/launch.json#L2](./.vscode/launch.json#L5). It's a classic node configuration enabling some flags like [--experimental-top-level-await](https://nodejs.org/docs/latest-v14.x/api/cli.html#cli_experimental_repl_await)
 
-![Screencast of debugging a Node.js file in VSCode](./docs/vscode-node-debug.gif)
 
-You can also use any debugging recipe documented in [Node.js debugging guide](https://nodejs.org/en/docs/guides/debugging-getting-started)
+
+You can also use
 
 # Testing
-
-<!-- https://github.com/github/docs/blob/main/tests/README.md -->
 
 ## Writing tests
 
