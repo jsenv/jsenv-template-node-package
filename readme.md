@@ -1,115 +1,147 @@
-> The documentation below is part of the [GitHub repository template](https://docs.github.com/en/github-ae@latest/github/creating-cloning-and-archiving-repositories/creating-a-repository-from-a-template#creating-a-repository-from-a-template). Check [how to use](./docs/how-to-use.md) to read documentation about the template itself.
+<!-- https://github.com/orbitdb/repo-template -->
 
-# Node package title
+# Jsenv node package template
 
-Node package description.
+This repository is meant to serve as a general template for how to set up repositories publishing a node package on npm. Use this repository as a way of finding example files, and use the following checklist to ensure that you've set up the repository correctly.
 
-[![npm package](https://img.shields.io/npm/v/@jsenv/template-node-package.svg?logo=npm&label=package)](https://www.npmjs.com/package/@jsenv/template-node-package)
-[![github main](https://github.com/jsenv/jsenv-template-node-package/workflows/main/badge.svg)](https://github.com/jsenv/jsenv-template-node-package/actions?workflow=main)
-[![codecov coverage](https://codecov.io/gh/jsenv/jsenv-template-node-package/branch/master/graph/badge.svg)](https://codecov.io/gh/jsenv/jsenv-template-node-package)
+**Warning**: It's a beta version.
 
-# Table of contents
+# Install checklist
 
-- [Template introduction](#Template-introduction)
-- [Presentation](#Presentation)
-- [Installation](#Installation)
-- [Example](#Example)
-- [API](#API)
-- [Production mode](#production-mode)
+Go through this checklist after creating your repository.
 
-# Presentation
+## ESLint review
 
-```js
-import { getMessage } from "@jsenv/template-node-package"
+The codebase uses [ESLint](https://eslint.org) to lint files.
 
-console.log(getMessage())
-```
+If you want to keep ESLint, check how it is used in [ESLint usage](#eslint-usage). Otherwise see [Removing ESLint](#Removing-eslint).
 
-Code above logs `"Hello prod!"`.
+- [ ] ESLint review done
 
-# Installation
+## Prettier review
 
-```console
-npm install @jsenv/template-node-package
-```
+The codebase uses [prettier](https://prettier.io) to ensure files formatting is coherent and pretty.
 
-# Example
+If you want to keep prettier check how it is used in [Prettier usage](#prettier-usage). Otherwise see [Removing prettier](#Removing-prettier)
 
-<details>
-  <summary>Create <code>example.js</code></summary>
+- [ ] Prettier review done
 
-```js
-import { getMessage } from "@jsenv/template-node-package"
+## Test review
 
-console.log(getMessage())
-```
+All test files are inside the [test/](./test/) directory and ends with `.test.js`.
 
-The package also provides files written in commonjs. It means you can also `require` it as shown below.
+If you want to keep test files check how they are used in [Test usage](#test-usage). Otherwise see [Removing tests](#Removing-tests)
 
-```js
-const { getMessage } = require("@jsenv/template-node-package")
+- [ ] Test review done
 
-console.log(getMessage())
-```
+## Github workflow review
 
-</details>
+document the need for codecov token during codecov
+document the need for npm token during auto publish
 
-<details>
-  <summary>Execute with node</summary>
+- [ ] GitHub workflow review done
 
-`example.js` can be executed with the `node` command.
+## Build review
 
-```console
-node ./example.js
-```
+- [ ] Build review done
 
-It would log `Hello dev!` in the terminal as shown in the screenshot below.
+## Replace readme
 
-![screenshot of terminal after execution with node](./TODO.png)
+- [ ] Readme replaced
 
-</details>
+# ESLint usage
 
-</details>
+The ESLint configuration can be found in [.eslintrc.cjs](./.eslintrc.cjs).
 
-# API
+It is recommended to install and use [vscode-eslint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint) to have **ESLint integrated in VSCode**.
 
-## getMessage
+If ESLint rules are not respected, the main **GitHub workflow will fail** during [code quality step](./.github/workflows/main.yml#L45).
 
-`getMessage` is a function returning a string. The returned string is different depending in [production mode](#production-mode)
+You can also run a command to check all your file against ESLint rules:
+
+There is one command for ESLint
 
 <details>
-  <summary>getMessage code example</summary>
+  <summary>npm run eslint-check</summary>
 
-```js
-import { getMessage } from "@jsenv/template-node-package"
+Execute ESLint command on all files.
 
-const message = getMessage()
-message // "Hello dev!"
-```
+![stuff](./docs/eslint-check-terminal.png)
 
 </details>
 
-## getMessageAsync
+# Prettier usage
 
-`getMessageAsync` is like [getMessage](#getMessage) except it's an async function.
+The prettier configuration can be found in [.prettierrc.yml](./.prettierrc.yml).
+
+Install [prettier-vscode](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode) and **let the extension do the formatting** when you save a file.
+
+If prettier configuration is not respected, the main **GitHub workflow will log** which files are incorrect during [code format step](./.github/workflows/ci.yml#L33).
+
+There is 3 commands for prettier
 
 <details>
-  <summary>getMessageAsync code example</summary>
+  <summary>npm run prettier-check</summary>
 
-```js
-import { getMessageAsync } from "@jsenv/template-node-package"
+Logs all files matching and not matching prettier format.
 
-const message = await getMessageAsync()
-message // "Hello dev!"
-```
+![stuff](./docs/prettier-check-terminal.png)
 
 </details>
 
-# Production mode
+<details>
+  <summary>npm run prettier-format-stage</summary>
 
-This package have two mode: `development` and `production`. By default this package is in `development` mode.
+Format all files in the [git staging area](https://softwareengineering.stackexchange.com/a/119790)
 
-`production` mode can be enabled using [--conditions=production](https://nodejs.org/docs/latest-v15.x/api/packages.html#packages_resolving_user_conditions) when executing the code with the node command.
-In `production` mode [getMessage](#getmessage) and [getMessageAsync](#getMessageAsync) return a different string: `"Hello prod!"`
+![stuff](./docs/prettier-format-stage-terminal.png)
 
-> The effect of `production` mode is trivial because it's a dumb package. With a real package, `development` and `production` would have more important differences.
+</details>
+
+<details>
+  <summary>npm run prettier-format</summary>
+
+Format all files in the project.
+
+![stuff](./docs/prettier-format-terminal.png)
+
+</details>
+
+# Tests usage
+
+It's not strictly necessary to run tests locally while developing: You can always open a pull request and rely on the GitHub workflow to run tests for you, but sometimes it's helpful to run tests locally before pushing your changes.
+
+There is 2 commands for tests
+
+<details>
+  <summary>npm test</summary>
+
+Run all tests
+
+![stuff](./docs/test-terminal.png)
+
+</details>
+
+<details>
+  <summary>npm run test-with-coverage</summary>
+
+Run all tests and generate associated coverage into
+
+</details>
+
+# Removing ESLint
+
+1. Remove `check lint` step in [.github/workflows/main.yml](./.github/workflows/main.yml#L43)
+2. Remove `"eslint-check"` from `"scripts"` in [package.json](./package.json#L42)
+3. Remove `"eslint"` from `"devDependencies"` in [package.json](./package.json#L68)
+4. Remove `"@jsenv/eslint-config"` from `"devDependencies"` in [package.json](./package.json#L63)
+5. Remove [.eslintignore](./.eslintignore)
+6. Remove [.eslintrc.cjs](./.eslintrc.cjs)
+
+# Removing prettier
+
+1. Remove `check format` step in [.github/workflows/main.yml](./.github/workflows/main.yml#L45)
+2. Remove prettier scripts from `"scripts"` in [package.json](./package.json#L48)
+3. Remove `"prettier"` from `"devDependencies"` in [package.json](./package.json#L69)
+4. Remove [.prettierignore](./.prettierignore)
+5. Remove [.prettierrc.yml](./.prettierrc.yml)

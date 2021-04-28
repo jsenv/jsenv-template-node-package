@@ -16,10 +16,11 @@ const config = createEslintConfig({
   importResolutionMethod: "import-map",
   importMapFileRelativeUrl: "./importmap.dev.importmap",
 
-  // "node" and "browser" params tells ESLint where our files will be executed.
-  // ESLint will configure the available global variables according to this param.
-  // Here it means ESLint could report an error like "window" is not defined
-  // but not "global" is not defined.
+  // Files in this repository are all meant to be executed in Node.js
+  // and we want to tell this to ESLint.
+  // As a result ESLint can consider `window` as undefined and `global`
+  // as an existing global variable.
+  // To do that we pass browser: false, node:true
   browser: false,
   node: true,
 
@@ -27,5 +28,8 @@ const config = createEslintConfig({
   // already handled by prettier.
   prettier: true,
 })
+
+// Example of code changing the ESLint configuration to enable a rule:
+// config.rules['prefer-const'] = ['error']
 
 module.exports = config
