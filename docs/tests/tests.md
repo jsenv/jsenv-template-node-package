@@ -19,20 +19,9 @@ Run all tests
 
 </details>
 
-<details>
-  <summary>npm run test-with-coverage</summary>
-
-Run all tests and collect associated code coverage, then write coverage report into coverage/index.html and also log coverage into the terminal.
-
-![stuff](./test-with-coverage-terminal.png)
-
-</details>
-
 ## Executing a single test
 
-Tests are written using [jsenv](https://github.com/jsenv/jsenv-core). This is a test runner which see test files as regular files. This allows test files to be executed and debugged as any other file.
-
-All test files are executable directly with `node` command. And all test files can debugged using [VSCode integrated debugger for Node.js](https://code.visualstudio.com/docs/nodejs/nodejs-debugging). Any debugging recipe documented in [Node.js debugging guide](https://nodejs.org/en/docs/guides/debugging-getting-started) works too.
+Tests are written using [jsenv](https://github.com/jsenv/jsenv-core). This is a test runner which see test files as regular files so each test file can be executed independently.
 
 <details>
   <summary>node test/message.test.js</summary>
@@ -43,10 +32,26 @@ See [test/message.test.js](../../test/message.test.js)
 
 </details>
 
+And debugged independently using [VSCode debugger for Node.js](https://code.visualstudio.com/docs/nodejs/nodejs-debugging) or any debugging recipe documented in [Node.js debugging guide](https://nodejs.org/en/docs/guides/debugging-getting-started).
+
 <details>
   <summary>See test file debugging in VSCode</summary>
 
 ![Screencast of debugging a test file in VSCode](./test-debug-vscode.gif)
+
+</details>
+
+## Test coverage
+
+Explain coverage, talk about codecov integration.
+Explain the need for CODECOV_TOKEN
+
+<details>
+  <summary>npm run test-with-coverage</summary>
+
+Run all tests and collect associated code coverage, then write coverage report into coverage/index.html and also log coverage into the terminal.
+
+![stuff](./test-with-coverage-terminal.png)
 
 </details>
 
