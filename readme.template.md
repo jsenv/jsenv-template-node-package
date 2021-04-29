@@ -15,6 +15,7 @@ Node package description.
 - [Example](#Example)
 - [API](#API)
 - [Production mode](#production-mode)
+- [Development](#Development)
 
 # Presentation
 
@@ -106,9 +107,12 @@ message // "Hello dev!"
 
 # Production mode
 
-This package have two mode: `development` and `production`. By default this package is in `development` mode.
+The code of this npm package behaves differently when executed with `--conditions=production`: [getMessage](#getmessage) and [getMessageAsync](#getMessageAsync) return a different string (`"Hello prod!"`).
 
-`production` mode can be enabled using [--conditions=production](https://nodejs.org/docs/latest-v15.x/api/packages.html#packages_resolving_user_conditions) when executing the code with the node command.
-In `production` mode [getMessage](#getmessage) and [getMessageAsync](#getMessageAsync) return a different string: `"Hello prod!"`
+Read more in [How to use production mode](./docs/production/production.md).
 
-> The effect of `production` mode is trivial because it's a dumb package. With a real package, `development` and `production` would have more important differences.
+> Here the effect of `production` mode is trivial because it's a dumb package. With a real package, it would have more important differences.
+
+# Development
+
+If you are part or want to be part of the developpers of this package, check [development.md](./docs/development.md)

@@ -56,6 +56,12 @@ TODO
 
 - [ ] Build review done
 
+## Auto publish on npm review
+
+TODO
+
+- [ ] Auto publish review done
+
 ## Replace readme
 
 TODO
