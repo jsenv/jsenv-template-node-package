@@ -1,3 +1,5 @@
+// documentation: https://github.com/jsenv/jsenv-core/blob/master/docs/building/readme.md#Building-a-nodejs-package
+
 import { buildProject, getBabelPluginMapForNode } from "@jsenv/core"
 import * as jsenvConfig from "../../jsenv.config.js"
 
