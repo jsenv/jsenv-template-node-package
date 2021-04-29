@@ -53,3 +53,7 @@ Follow these steps to remove the CommonJS build from this repository.
 7. Remove `"module"` in [package.json](../../package.json#L34)
 
 8. Remove `"/dist/"` from `"files"` in [package.json](../../package.json#L37)
+
+9. Remove `/dist/` in [.eslintignore](../../.eslintignore#L17)
+
+10. Remove `/dist/` in [.prettierignore](../../.prettierignore#L17)

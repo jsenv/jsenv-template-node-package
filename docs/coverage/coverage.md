@@ -49,4 +49,6 @@ If you want to enable this feature, see [Configure codecov](#Configure-codecov),
 1. Follow steps from [Remove codecov](#Remove-codecov)
 2. Replace `npm run test-with-coverage` by `npm test` in [.github/workflows/main.yml](../../.github/workflows/main.yml#L48)
 3. Remove `"test-with-coverage"` from `"scripts"` in [package.json](../../package.json#L47)
-4. Remove `/coverage/` from [.gitignore](../../.gitignore#L9)
+4. Remove `/coverage/` in [.gitignore](../../.gitignore#L9)
+5. Remove `/coverage/` in [.eslintignore](../../.eslintignore#L13)
+6. Remove `/coverage/` in [.prettierignore](../../.prettierignore#L13)

@@ -52,13 +52,17 @@ If you want to keep this ability, check [How to use production mode](./docs/prod
 
 ## Build review
 
-TODO
+This package got a build in order to be compatible with CommonJS.
+
+If you want to keep the commonjs build, check [How to use build](./docs/build/build.md#how-to-use-build). Otherwise see [How to remove build](./docs/build/build.md#how-to-remove-build).
 
 - [ ] Build review done
 
 ## Auto publish on npm review
 
-TODO
+This repository automatically publish new package version on npm.
+
+If you want to keep auto publish on npm, check [How to use auto publish](./docs/auto_publish/auto_publish.md#how-to-use-auto-publish). Otherwise see [How to remove auto publish](./docs/auto_publish/auto_publish.md#how-to-remove-auto-publish).
 
 - [ ] Auto publish review done
 
