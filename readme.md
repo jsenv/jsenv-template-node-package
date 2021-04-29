@@ -14,7 +14,7 @@ Go through this checklist after creating your repository.
 
 The codebase uses [ESLint](https://eslint.org) to lint files.
 
-If you want to keep ESLint, check how it is used in [How to use ESLint](./docs/eslint/eslint.md#How-to-use-eslint). Otherwise see [How to remove ESLint](#./docs/prettier/prettier.md#How-to-remove-eslint).
+If you want to keep ESLint, check [How to use ESLint](./docs/eslint/eslint.md#How-to-use-eslint). Otherwise see [How to remove ESLint](#./docs/prettier/prettier.md#How-to-remove-eslint).
 
 - [ ] ESLint review done
 
@@ -22,7 +22,7 @@ If you want to keep ESLint, check how it is used in [How to use ESLint](./docs/e
 
 The codebase uses [prettier](https://prettier.io) to ensure files formatting is coherent and pretty.
 
-If you want to keep prettier check how it is used in [How to use Prettier](./docs/prettier/prettier.md#How-to-use-prettier). Otherwise see [How to remove prettier](./docs/prettier/prettier.md#How-to-remove-prettier)
+If you want to keep prettier, check [How to use Prettier](./docs/prettier/prettier.md#How-to-use-prettier). Otherwise see [How to remove prettier](./docs/prettier/prettier.md#How-to-remove-prettier)
 
 - [ ] Prettier review done
 
@@ -30,27 +30,34 @@ If you want to keep prettier check how it is used in [How to use Prettier](./doc
 
 All test files are inside the [test/](./test/) directory and ends with `.test.js`.
 
-If you want to keep test files check how to use them in [How to use tests](./docs/tests/tests.md#How-to-use-tests). Otherwise see [How to remove tests](#How-to-remove-tests)
+If you want to keep test files check [How to use tests](./docs/tests/tests.md#How-to-use-tests). Otherwise see [How to remove tests](./docs/tests/tests.md#How-to-remove-tests)
 
 - [ ] Test review done
 
-## Github workflow review
+## Coverage review
 
-document the need for codecov token during codecov
-document the need for npm token during auto publish
+Code coverage report can be generated and are connected to codecov to monitor them over time and integrate coverage to pull requests.
 
-- [ ] GitHub workflow review done
+If you want to keep code coverage check [How to use code coverage](./docs/coverage/coverage.md#How-to-use-code-coverage). Otherwise see [How to remove code coverage](./docs/coverage/coverage.md#How-to-remove-code-coverage)
+
+- [ ] Coverage review done
+
+## Production mode review
+
+The code of this npm package behaves differently when executed with `--conditions=production`.
+
+If you want to keep this ability, check [How to use production mode](./docs/production/production.md#how-to-use-production-mode). Otherwise see [How to remove production mode](./docs/production/production.md#how-to-remove-production-mode).
+
+- [ ] Production mode review done
 
 ## Build review
+
+TODO
 
 - [ ] Build review done
 
 ## Replace readme
 
+TODO
+
 - [ ] Readme replaced
-
-</details>
-
-# Tests usage
-
-</details>
