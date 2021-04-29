@@ -1,3 +1,5 @@
+# see https://docs.codecov.io/docs/codecovyml-reference
+
 comment:
   layout: "header"
 
@@ -7,7 +9,7 @@ coverage:
   range: 0...100
   status:
     # same idea about coverage being nice to have:
-    # a commit/pr decreasing coverage is still successful not matter how much
+    # a commit/pr decreasing coverage is still successful no matter how much
     # it decreases coverage
     project: false
     patch: false

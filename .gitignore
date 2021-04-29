@@ -40,5 +40,5 @@
 
 # secrets.json is a file where some tokens are available but MUST NOT
 # be published to the GitHub repository.
-# On my machine this file contains secret tokens such as CODECOV_TOKEN and NPM_TOKEN
+# On my machine this file contains secret tokens such as NPM_TOKEN
 /secrets.json

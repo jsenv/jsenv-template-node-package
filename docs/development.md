@@ -62,8 +62,6 @@ Then you can open a file and modify its content. The first thing that should hap
 
 You can debug a file using [VSCode integrated debugger for Node.js](https://code.visualstudio.com/docs/nodejs/nodejs-debugging). This repository contains a pre-defined launch configuration for VSCode at [.vscode/launch.json#L2](./.vscode/launch.json#L5). It's a classic node configuration enabling some flags like [--experimental-top-level-await](https://nodejs.org/docs/latest-v14.x/api/cli.html#cli_experimental_repl_await)
 
-
-
 You can also use
 
 # Testing
@@ -122,3 +120,5 @@ The files will be generated in `commonjs` to allow consumer of the package to us
 Read more in [jsenv building documentation](https://github.com/jsenv/jsenv-core/blob/master/docs/building/readme.md#Building-a-nodejs-package).å
 
 TODO: explain the github workflow (it's auto publishing on npm)
+
+It's not strictly necessary to run tests locally while developing: You can always open a pull request and rely on the GitHub workflow to run tests for you, but sometimes it's helpful to run tests locally before pushing your changes.
