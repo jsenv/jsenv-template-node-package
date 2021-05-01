@@ -6,6 +6,10 @@ in there.
 
 */
 
+import { createRequire } from "module"
+
+const require = createRequire(import.meta.url)
+
 require("@jsenv/template-node-package")
 
 console.log("passed")
