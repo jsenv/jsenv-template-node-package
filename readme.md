@@ -66,6 +66,12 @@ If you want to keep auto publish on npm, check [How to use auto publish](./docs/
 
 - [ ] Auto publish review done
 
+## importmap review
+
+TODO
+
+- [ ] importmap review done
+
 ## Replace readme
 
 TODO
