@@ -12,7 +12,6 @@ executeTestPlan({
         launch: (params) => {
           return launchNode({
             ...params,
-            importMapFileRelativeUrl: "./importmap.prod.test.importmap",
             commandLineOptions: ["--conditions=production"],
           })
         },

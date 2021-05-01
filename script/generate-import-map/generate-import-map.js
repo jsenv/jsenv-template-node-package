@@ -25,11 +25,3 @@ generateFile("importmap.prod.importmap", {
 generateFile("importmap.dev.importmap", {
   dev: true,
 })
-generateFile("importmap.prod.test.importmap", {
-  // we need dev dependencies for tests
-  // and avoid parsing js files are tests would not be found
-  // also we want to favor "production" over "development" in package exports
-  projectPackageDevDependenciesIncluded: true,
-  treeshakeMappings: false,
-  packageConditionDevelopment: false,
-})
