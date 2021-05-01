@@ -9,7 +9,7 @@ const build = async ({ dev = false }) => {
     importMapFileRelativeUrl: dev ? "./importmap.dev.importmap" : "./importmap.prod.importmap",
     format: "commonjs",
     entryPointMap: {
-      "./main.js": dev ? "./main.dev.cjs" : "./main.prod.cjs",
+      "./main.js": dev ? "./template-node-package.dev.cjs" : "./template-node-package.prod.cjs",
     },
     babelPluginMap: getBabelPluginMapForNode(),
     buildDirectoryClean: !dev,

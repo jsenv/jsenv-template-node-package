@@ -18,7 +18,7 @@ Before publising the package on npm, a script is writing files into [dist/common
 
 This script is configured in [script/generate-commonjs-build/generate-commonjs-build.js](../../script/generate-commonjs-build/generate-commonjs-build.js).
 
-To make commonjs files also compatible with [production mode](../production/production.md), two files are generated: [dist/commonjs/main.dev.cjs](../../dist/commonjs/main.dev.cjs) and [dist/commonjs/main.prod.cjs](../../dist/commonjs/main.prod.cjs).
+To make commonjs files also compatible with [production mode](../production/production.md), two files are generated: [dist/commonjs/template-node-package.dev.cjs](../../dist/commonjs/template-node-package.dev.cjs) and [dist/commonjs/template-node-package.prod.cjs](../../dist/commonjs/template-node-package.prod.cjs).
 
 The commonjs build is called by npm thanks to `"prepublishOnly"` script in [package.json](../../package.json#L53)
 
@@ -36,8 +36,8 @@ Follow these steps to remove the CommonJS build from this repository.
    - ".": {
    -   "import": "./main.js",
    -   "require": {
-   -     "production": "./dist/commonjs/main.prod.cjs",
-   -     "default": "./dist/commonjs/main.dev.cjs"
+   -     "production": "./dist/commonjs/template-node-package.prod.cjs",
+   -     "default": "./dist/commonjs/template-node-package.dev.cjs"
    -   }
    - },
    + ".": "./main.js",

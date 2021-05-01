@@ -8,7 +8,7 @@
     "url": "https://github.com/jsenv/jsenv-template-node-package"
   },
   "engines": {
-    "node": ">=13.0.0"
+    "node": ">=14.0.0"
   },
   "publishConfig": {
     "access": "public"
@@ -18,8 +18,8 @@
     ".": {
       "import": "./main.js",
       "require": {
-        "production": "./dist/commonjs/main.prod.cjs",
-        "default": "./dist/commonjs/main.dev.cjs"
+        "production": "./dist/commonjs/template-node-package.prod.cjs",
+        "default": "./dist/commonjs/template-node-package.dev.cjs"
       }
     },
     "./": "./",
@@ -32,7 +32,7 @@
     }
   },
   "module": "main.js",
-  "main": "dist/commonjs/main.cjs",
+  "main": "dist/commonjs/template-node-package.dev.cjs",
   "files": [
     "/dist/",
     "/src/",
@@ -59,7 +59,7 @@
   "devDependencies": {
     "@jsenv/assert": "2.2.5",
     "@jsenv/codecov-upload": "3.4.3",
-    "@jsenv/core": "18.0.0-alpha.0",
+    "@jsenv/core": "18.0.0-alpha.1",
     "@jsenv/eslint-config": "14.0.0",
     "@jsenv/github-release-package": "1.2.2",
     "@jsenv/node-module-import-map": "13.4.1",

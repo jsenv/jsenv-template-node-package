@@ -1,6 +1,6 @@
 {
   "version": 3,
-  "file": "main.dev.cjs",
+  "file": "template-node-package.dev.cjs",
   "sources": [
     "../../src/message.js"
   ],
