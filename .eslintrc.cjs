@@ -8,7 +8,7 @@
 
 const { createEslintConfig } = require("@jsenv/eslint-config")
 
-const config = createEslintConfig({
+const eslintConfig = createEslintConfig({
   projectDirectoryUrl: __dirname,
 
   // Tell ESLint to use the importmap to resolve imports.
@@ -32,4 +32,31 @@ const config = createEslintConfig({
 // Example of code changing the ESLint configuration to enable a rule:
 // config.rules['prefer-const'] = ['error']
 
-module.exports = config
+// disable commonjs globals by default
+// (package is "type": "module")
+Object.assign(eslintConfig.globals, {
+  __filename: "off",
+  __dirname: "off",
+  require: "off",
+})
+
+eslintConfig.overrides.push({
+  files: ["**/*.cjs"],
+  // inside *.cjs files. restore commonJS "globals"
+  globals: {
+    __filename: true,
+    __dirname: true,
+    require: true,
+  },
+  // inside *.cjs files, use commonjs module resolution
+  settings: {
+    "import/resolver": {
+      [Object.keys(eslintConfig.settings["import/resolver"])[0]]: {
+        node: true,
+        commonJsModuleResolution: true,
+      },
+    },
+  },
+})
+
+module.exports = eslintConfig
