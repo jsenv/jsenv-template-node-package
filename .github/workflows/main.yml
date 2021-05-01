@@ -62,10 +62,10 @@ jobs:
       - name: npm install
         run: npm install
       - name: publish package
-        run: node --experimental-top-level-await ./.github/workflows/release/publish-package.js
+        run: node --experimental-top-level-await ./.github/workflows/main/publish-package.js
         env:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
       - name: ensure github release
-        run: node --experimental-top-level-await ./.github/workflows/release/ensure-github-release-for-package.js
+        run: node --experimental-top-level-await ./.github/workflows/main/ensure-github-release-for-package.js
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
