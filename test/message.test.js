@@ -1,8 +1,7 @@
 import { assert } from "@jsenv/assert"
 import { getMessage, getMessageAsync } from "@jsenv/template-node-package"
-import { getProcessArgument } from "./test.util.js"
 
-const isProduction = (getProcessArgument("--conditions") || "").includes("production")
+const isProduction = process.execArgv.some((arg) => arg.includes("--conditions=production"))
 const messageExpected = isProduction ? "Hello prod!" : "Hello dev!"
 
 {
