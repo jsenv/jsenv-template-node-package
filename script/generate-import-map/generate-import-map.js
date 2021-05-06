@@ -18,6 +18,7 @@ await writeImportMapFile(
     getImportMapFromProjectFiles({
       projectDirectoryUrl,
       runtime: "node",
+      dev: true,
     }),
   ],
   {
