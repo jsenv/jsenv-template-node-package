@@ -1,12 +1,16 @@
+# Prettier
+
+The codebase uses [prettier](https://prettier.io) to ensure files formatting is coherent and pretty.
+
+If prettier configuration is not respected, the main **GitHub workflow will log** which files are incorrect during [check format step](../../.github/workflows/ci.yml#L33).
+
 # How to use prettier
 
 The prettier configuration can be found in [.prettierrc.yml](../../.prettierrc.yml).
 
 Install [prettier-vscode](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode) and **let the extension do the formatting** when you save a file.
 
-If prettier configuration is not respected, the main **GitHub workflow will log** which files are incorrect during [check format step](../../.github/workflows/ci.yml#L33).
-
-There is 3 commands for prettier
+List of commands related to prettier:
 
 <details>
   <summary>npm run prettier-check</summary>
@@ -43,5 +47,5 @@ If for some reason you want to remove prettier from this repository, follow the 
 2. Remove prettier scripts from `"scripts"` in [package.json](../../package.json#L48)
 3. Remove `"prettier"` from `"devDependencies"` in [package.json](../../package.json#L69)
 4. Remove `"@jsenv/prettier-check-project"` from `"devDependencies"` in [package.json](../../package.json#L67)
-5. Remove [.prettierignore](../../.prettierignore)
-6. Remove [.prettierrc.yml](../../.prettierrc.yml)
+5. Delete [.prettierignore](../../.prettierignore)
+6. Delete [.prettierrc.yml](../../.prettierrc.yml)

@@ -1,27 +1,28 @@
+/**
+
+Two things happens here:
+
+The script generates ./importmap.dev.importmap file that will be used by ESLint
+to resolve imports.
+
+The script also update "paths" in ./jsconfig.json that will be used by VSCode
+to resolve imports.
+
+*/
+
 import { getImportMapFromProjectFiles, writeImportMapFile } from "@jsenv/node-module-import-map"
-import { projectDirectoryUrl } from "../../jsenv.config.js"
+import { projectDirectoryUrl, importMapFileRelativeUrl } from "../../jsenv.config.js"
 
-const generateFile = async (importMapFileRelativeUrl, { dev, ...rest } = {}) => {
-  await writeImportMapFile(
-    [
-      getImportMapFromProjectFiles({
-        projectDirectoryUrl,
-        runtime: "node",
-        dev,
-        ...rest,
-      }),
-    ],
-    {
+await writeImportMapFile(
+  [
+    getImportMapFromProjectFiles({
       projectDirectoryUrl,
-      importMapFileRelativeUrl,
-      jsConfigFile: dev,
-    },
-  )
-}
-
-generateFile("importmap.prod.importmap", {
-  dev: false,
-})
-generateFile("importmap.dev.importmap", {
-  dev: true,
-})
+      runtime: "node",
+    }),
+  ],
+  {
+    projectDirectoryUrl,
+    importMapFileRelativeUrl,
+    jsConfigFile: true,
+  },
+)

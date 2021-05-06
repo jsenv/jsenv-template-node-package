@@ -1,14 +1,16 @@
 <!-- https://github.com/github/docs/blob/main/tests/README.md -->
 
-# How to use tests
+# Tests
 
 All test files are inside the [test/](./test/) directory and ends with `.test.js`.
 
 These files are executed twice, the second execution ensure code specific to _production_ is also tested. Read more in [Production mode](../production/production.md#How-to-use-production-mode).
 
+If one or more test execution is failing, the main **GitHub workflow will fail** during [check tests](../../.github/workflows/main.yml#L47) step.
+
 The test files code coverage report can be generated locally and is also sent to codecov by the main Github workflow. Read more in [coverage](../coverage/coverage.md).
 
-If one or more test execution is failing, the main **GitHub workflow will fail** during [check tests](../../.github/workflows/main.yml#L47) step.
+# How to use tests
 
 The test script can be found in [script/test/test.js](../../script/test/test.js).
 
@@ -52,5 +54,5 @@ If you don't need test or want to use an other test framework/library follow the
 1. Remove `check tests` step in [.github/workflows/main.yml](../../.github/workflows/main.yml#L45)
 2. Remove `"test"` from `"scripts"` in [package.json](../../package.json#L44)
 3. Remove `"test-with-coverage"` from `"scripts"` in [package.json](../../package.json#L47)
-4. Remove [script/test/](../../script/test/) directory
+4. Delete [script/test/](../../script/test/) directory
 5. Remove `"@jsenv/assert"` from `"devDependencies"` [package.json](../../package.json#L60)

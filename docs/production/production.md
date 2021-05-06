@@ -1,8 +1,12 @@
-# How to use production mode
+# Production mode
 
 The code of this npm package behaves differently when executed with `--conditions=production`.
 
+Production must be explicitely enabled using `--conditions=production` to avoid accidentaly trigger code supposed to execute in production during development.
+
 If you look into `"imports"` in [package.json](../../package.json#L28) you will see that `#env` can either resolve to [env.dev.js](../../env.dev.js) or [env.prod.js](../../env.prod.js). The ability to remap an import specifier comes from Node.js and is documented in [package conditions](https://nodejs.org/docs/latest-v15.x/api/packages.html#packages_resolving_user_conditions).
+
+# How to use production mode
 
 This feature is designed for two purposes:
 
@@ -29,9 +33,7 @@ This feature is designed for two purposes:
   export const logBackendUrl = () => console.log(backendUrl)
   ```
 
-Production must be explicitely enabled using `--conditions=production` to avoid accidentaly trigger code supposed to execute in production during development.
-
-# Test production code
+## Test production code
 
 Execute/Debug a single test file in production mode using the VSCode launch configuration named `node (prod)` declared in [launch.json](../../launch.json#L26).
 
@@ -41,8 +43,9 @@ When all test files are executed by `npm test`, they are executed a second time 
 
 If you don't need the production mode you can remove it following the steps below.
 
-1. Remove all `#env` imports
-2. Remove [env.prod.js](../../env.prod.js) and [env.dev.js](../../env.dev.js)
-3. Remove `"node-prod"` from `testPlan` in [script/test/test.js](../../script/test/test.js#L11)
-4. Remove `"#env"` from `"imports"` in [package.json](../../package.json#L29)
-5. Remove the launch configuration named `"node (prod)"` in [launch.json](../../.vscode/launch.json#L26)
+1. Remove `#env` imports in your files
+2. Delete [env.prod.js](../../env.prod.js)
+3. Delete [env.dev.js](../../env.dev.js)
+4. Remove `"node-prod"` from `testPlan` in [script/test/test.js](../../script/test/test.js#L11)
+5. Remove `"#env"` from `"imports"` in [package.json](../../package.json#L29)
+6. Remove the launch configuration named `"node (prod)"` in [.vscode/launch.json](../../.vscode/launch.json#L26)

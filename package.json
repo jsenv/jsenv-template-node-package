@@ -8,7 +8,7 @@
     "url": "https://github.com/jsenv/jsenv-template-node-package"
   },
   "engines": {
-    "node": ">=14.0.0"
+    "node": ">=14.9.0"
   },
   "publishConfig": {
     "access": "public"
@@ -18,8 +18,8 @@
     ".": {
       "import": "./main.js",
       "require": {
-        "production": "./dist/commonjs/template-node-package.prod.cjs",
-        "default": "./dist/commonjs/template-node-package.dev.cjs"
+        "production": "./dist/prod/template-node-package.prod.cjs",
+        "default": "./dist/dev/template-node-package.dev.cjs"
       }
     },
     "./": "./",
@@ -32,18 +32,21 @@
     }
   },
   "module": "main.js",
-  "main": "dist/commonjs/template-node-package.dev.cjs",
+  "main": "dist/dev/template-node-package.dev.cjs",
   "files": [
     "/dist/",
     "/src/",
-    "/main.js"
+    "/main.js",
+    "/env.dev.js",
+    "/env.prod.js"
   ],
   "scripts": {
     "eslint-check": "node ./node_modules/eslint/bin/eslint.js .",
-    "dist": "npm run generate-commonjs-build",
+    "dist": "npm run build-dev && npm run build-prod",
     "test": "node ./script/test/test.js",
     "generate-import-map": "node ./script/generate-import-map/generate-import-map.js",
-    "generate-commonjs-build": "node ./script/generate-commonjs-build/generate-commonjs-build.js",
+    "build-dev": "node --experimental-import-meta-resolve ./script/build/build.js",
+    "build-prod": "node --conditions=production --experimental-import-meta-resolve ./script/build/build.js",
     "test-with-coverage": "npm run test -- --coverage",
     "prettier-format": "node ./script/prettier-format/prettier-format.js",
     "prettier-format-stage": "npm run prettier-format -- --staged",
@@ -54,12 +57,12 @@
     "postpublish": "node ./script/transform-package/restore-postinstall.js"
   },
   "dependencies": {
-    "@jsenv/util": "4.0.6"
+    "@jsenv/util": "4.1.0"
   },
   "devDependencies": {
     "@jsenv/assert": "2.2.5",
     "@jsenv/codecov-upload": "3.4.3",
-    "@jsenv/core": "18.0.0-alpha.2",
+    "@jsenv/core": "18.0.0-alpha.3",
     "@jsenv/eslint-config": "14.0.0",
     "@jsenv/github-release-package": "1.2.2",
     "@jsenv/node-module-import-map": "13.4.1",
