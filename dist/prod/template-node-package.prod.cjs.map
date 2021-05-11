@@ -1,0 +1,16 @@
+{
+  "version": 3,
+  "file": "template-node-package.prod.cjs",
+  "sources": [
+    "../../src/message.js"
+  ],
+  "sourcesContent": [
+    "import { dev } from \"#env\"\n\nconst message = dev ? \"Hello dev!\" : \"Hello prod!\"\n\nexport const getMessage = () => {\n  return message\n}\n\nexport const getMessageAsync = async () => {\n  return message\n}\n"
+  ],
+  "names": [
+    "message",
+    "getMessage",
+    "getMessageAsync"
+  ],
+  "mappings": ";;;;AAEA,MAAMA,OAAO,GAAwB,aAArC;MAEaC,UAAU,GAAG,MAAM;AAC9B,SAAOD,OAAP;AACD;MAEYE,eAAe,GAAG,YAAY;AACzC,SAAOF,OAAP;AACD;;;;;"
+}

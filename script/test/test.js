@@ -5,8 +5,16 @@ executeTestPlan({
   ...jsenvConfig,
   testPlan: {
     "test/**/*.test.js": {
-      node: {
+      "node": {
         launch: launchNode,
+      },
+      "node-prod": {
+        launch: (params) => {
+          return launchNode({
+            ...params,
+            commandLineOptions: ["--conditions=production"],
+          })
+        },
       },
     },
   },

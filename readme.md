@@ -1,91 +1,83 @@
-# Jsenv template node package.
+<!-- https://github.com/orbitdb/repo-template -->
 
-Template to create a GitHub repository for a node package.
+# Jsenv node package template
+
+This repository is meant to serve as a general template for how to set up repositories publishing a node package on npm.
+
+Use this repository as a way of finding example files and use the following checklist to ensure that you've set up the repository correctly.
 
 **Warning**: It's a beta version.
 
-[![npm package](https://img.shields.io/npm/v/@jsenv/template-node-package.svg?logo=npm&label=package)](https://www.npmjs.com/package/@jsenv/template-node-package)
-[![github ci](https://github.com/jsenv/jsenv-template-node-package/workflows/ci/badge.svg)](https://github.com/jsenv/jsenv-template-node-package/actions?workflow=ci)
-[![codecov coverage](https://codecov.io/gh/jsenv/jsenv-template-node-package/branch/master/graph/badge.svg)](https://codecov.io/gh/jsenv/jsenv-template-node-package)
+# Install checklist
 
-# Table of contents
+Go through this checklist after creating your repository.
 
-- [Presentation](#Presentation)
-- [Installation](#Installation)
-- [Coding](#Coding)
-- [Formatting](#Formatting)
-- [Linting](#Linting)
-- [Testing](#Testing)
-- [Building](#Building)
+## ESLint review
 
-# Presentation
+The codebase uses [ESLint](https://eslint.org) to lint files.
 
-This is a [GitHub repository template](https://docs.github.com/en/github-ae@latest/github/creating-cloning-and-archiving-repositories/creating-a-repository-from-a-template#creating-a-repository-from-a-template) to start a node package to publish on a package manager such as npm.
+If you want to keep ESLint, check [How to use ESLint](./docs/eslint/eslint.md#How-to-use-eslint). Otherwise see [How to remove ESLint](#./docs/prettier/prettier.md#How-to-remove-eslint).
 
-# Installation
+- [ ] ESLint review done
 
-The following setup is recommended to install this repository:
+## Prettier review
 
-**Operating System**: Mac, Linux or Windows.
+The codebase uses [prettier](https://prettier.io) to ensure files formatting is coherent and pretty.
 
-**Code editor**: [Visual Studio Code](https://code.visualstudio.com/).
+If you want to keep prettier, check [How to use Prettier](./docs/prettier/prettier.md#How-to-use-prettier). Otherwise see [How to remove prettier](./docs/prettier/prettier.md#How-to-remove-prettier)
 
-**Command line tools**:
+- [ ] Prettier review done
 
-- [git](https://git-scm.com/) version 2.26.0 or above
-- [node](https://nodejs.org/en/) version 14.5.0 or above
+## Test review
 
-If setup is done, run the following commands to install the repository on your machine.
+All test files are inside the [test/](./test/) directory and ends with `.test.js`.
 
-```console
-git clone git@github.com:jsenv/jsenv-template-node-package.git
-```
+If you want to keep test files check [How to use tests](./docs/tests/tests.md#How-to-use-tests). Otherwise see [How to remove tests](./docs/tests/tests.md#How-to-remove-tests)
 
-```console
-npm install
-```
+- [ ] Test review done
 
-# Coding
+## Coverage review
 
-While coding, you can simply use `node` command to execute the file. But you will likely prefer to execute file using [VSCode integrated debugger for Node.js](https://code.visualstudio.com/docs/nodejs/nodejs-debugging). This repository contains a pre-defined launch configuration for VSCode at [.vscode/launch.json#L2](./.vscode/launch.json#L5). It's a classic node configuration enabling some flags like [--experimental-top-level-await](https://nodejs.org/docs/latest-v14.x/api/cli.html#cli_experimental_repl_await)
+Code coverage report can be generated and are connected to codecov to monitor them over time and integrate coverage to pull requests.
 
-<details>
-  <summary>See VSCode debugging a Node.js file</summary>
+If you want to keep code coverage check [How to use code coverage](./docs/coverage/coverage.md#How-to-use-code-coverage). Otherwise see [How to remove code coverage](./docs/coverage/coverage.md#How-to-remove-code-coverage)
 
-![Screencast of debugging a Node.js file in VSCode](./docs/vscode-node-debug.gif)
+- [ ] Coverage review done
 
-</details>
+## Production mode review
 
-# Formatting
+The code of this npm package behaves differently when executed with `--conditions=production`.
 
-The codebase uses prettier to ensure a coherent and pretty code formatting. The prettier configuration can be found in [.prettierrc.yml](./.prettierrc.yml).
+If you want to keep this ability, check [How to use production mode](./docs/production/production.md#how-to-use-production-mode). Otherwise see [How to remove production mode](./docs/production/production.md#how-to-remove-production-mode).
 
-If prettier configuration is not respected, the main **GitHub workflow will log** which files are incorrect during [code format step](./.github/workflows/ci.yml#L33). I repeat, the workflow will not fail, just log.
+- [ ] Production mode review done
 
-You are supposed to perform the code formatting, in other words install [prettier-vscode](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode) and let the extension do it when you save a file.
+## Build review
 
-# Linting
+This package got a build in order to be compatible with CommonJS.
 
-The codebase uses ESLint to lint files. The ESLint configuration can be found in [.eslintrc.cjs](./.eslintrc.cjs). The ESLint configuration consider all files as written for a browser except thoose inside `script/` and `github/` directories. The rest of the configuration comes from [@jsenv/eslint-config](https://github.com/jsenv/jsenv-eslint-config#eslint-config).
+If you want to keep the commonjs build, check [How to use build](./docs/build/build.md#how-to-use-build). Otherwise see [How to remove build](./docs/build/build.md#how-to-remove-build).
 
-If ESLint rules are not respected, the main **GitHub workflow will fail** during [code quality step](./.github/workflows/ci.yml#L45).
+- [ ] Build review done
 
-You can run `npm run eslint-check` to ensure your file respects ESLint rules. It is recommended to install and use [vscode-eslint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint) to have ESLint integrated in VSCode.
+## Auto publish on npm review
 
-# Testing
+This repository automatically publish new package version on npm.
 
-Test are inside [test/](./test/) directory.
+If you want to keep auto publish on npm, check [How to use auto publish](./docs/auto_publish/auto_publish.md#how-to-use-auto-publish). Otherwise see [How to remove auto publish](./docs/auto_publish/auto_publish.md#how-to-remove-auto-publish).
 
-They can be runned all at once using `npm test`.
+- [ ] Auto publish review done
 
-They can be runned selectively in node by executing the file directly with the `node` command or with VSCode debugger as documented in [coding](#coding)
+## importmap review
 
-Read more in [jsenv testing documentation](https://github.com/jsenv/jsenv-core#testing)
+An importmap file is part of this codebase to make ESLint and VSCode capable to resolve imports.
 
-# Building
+If you want to keep that check [How to use importmap](./docs/importmap/importmap.md#how-to-use-importmap). Otherwise see [How to remove importmap](./docs/importmap/importmap.md#how-to-remove-importmap).
 
-In order to generate files that will be published on npm use `npm run dist`. This will generate files into [dist/](./dist/) directory.
+- [ ] importmap review done
 
-The files will be generated in `commonjs` to allow consumer of the package to use `require` on it. It means [main.js](./main.js) written using standard ES module format is converted into CommonJS module format and written at [dist/commonjs/main.cjs](./dist/commonjs/main.cjs).
+## Replace readme
 
-Read more in [jsenv building documentation](https://github.com/jsenv/jsenv-core/blob/master/docs/building/readme.md#Building-a-nodejs-package).
+This readme documents how to use the template. You can replace this readme by [readme.template.md](./readme.template.md).
+
+- [ ] Readme replaced
