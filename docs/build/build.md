@@ -8,6 +8,8 @@ const { getMessage } = require("@jsenv/template-node-package")
 
 This is possible thanks to the `"exports"` field in [package.json](../../package.json#L20) as explained in [Node.js documentation](https://nodejs.org/dist/latest-v16.x/docs/api/packages.html#packages_approach_2_isolate_state).
 
+If you want to keep the commonjs build, check [How to use build](#how-to-use-build). Otherwise see [How to remove build](#how-to-remove-build).
+
 # How to use build
 
 There is a `"prepublishOnly"` script in [package.json](../../package.json#L56). This command is called by npm before publishing the package. It creates a commonjs build of the sources files and write them into `dist/`.

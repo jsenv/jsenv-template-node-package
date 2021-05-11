@@ -1,10 +1,12 @@
 # import map
 
-An importmap file is part of this codebase. This file exists to make ESLint and VSCode capable to resolve imports.
+An importmap file is part of this codebase to make ESLint and VSCode capable to resolve imports.
 
 Node.js is resolving import with a complex algorithm called [esm resolution algorithm](https://nodejs.org/dist/latest-v16.x/docs/api/esm.html#esm_resolution_algorithm). There is currently no ESLint plugin and no VSCode extension implementing this algorithm.
 
 Thanks to the importmap file, ESLint and VSCode are capable to resolve imports like Node.js.
+
+If you want to keep that check [How to use importmap](#how-to-use-importmap). Otherwise see [How to remove importmap](#how-to-remove-importmap).
 
 # How to use importmap
 

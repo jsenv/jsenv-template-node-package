@@ -1,8 +1,8 @@
 # Coverage
 
-This repository can generate code coverage for test files. It shows which part of the source files code have been covered by the execution of test files.
+Code coverage shows which part of the source files code have been covered by the execution of test files.
 
-You can get coverage locally on your machine. Coverage is also integrated to GitHub using [Codecov](https://docs.codecov.io/docs/pull-request-comments).
+You can get coverage locally on your machine. It is also integrated to GitHub using [Codecov](https://docs.codecov.io/docs/pull-request-comments).
 
 Codecov will post message into pull requests.
 
@@ -11,6 +11,8 @@ Codecov will post message into pull requests.
 And is used to display a badge in the readme.
 
 ![stuff](./codecov-badge.png)
+
+If you want to keep code coverage check [How to use code coverage](#How-to-use-code-coverage). Otherwise see [How to remove code coverage](#How-to-remove-code-coverage)
 
 # How to use code coverage
 

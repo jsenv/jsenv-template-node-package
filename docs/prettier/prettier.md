@@ -4,6 +4,8 @@ The codebase uses [prettier](https://prettier.io) to ensure files formatting is 
 
 If prettier configuration is not respected, the main **GitHub workflow will log** which files are incorrect during [check format step](../../.github/workflows/ci.yml#L33).
 
+If you want to keep prettier, check [How to use Prettier](#How-to-use-prettier). Otherwise see [How to remove prettier](#How-to-remove-prettier)
+
 # How to use prettier
 
 The prettier configuration can be found in [.prettierrc.yml](../../.prettierrc.yml).

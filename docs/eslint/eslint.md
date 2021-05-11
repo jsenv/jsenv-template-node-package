@@ -4,6 +4,8 @@ The codebase uses [ESLint](https://eslint.org) to lint files.
 
 If ESLint rules are not respected, the main **GitHub workflow will fail** during [check lint step](../../.github/workflows/main.yml#L45).
 
+If you want to keep ESLint, check [How to use ESLint](#How-to-use-eslint). Otherwise see [How to remove ESLint](#How-to-remove-eslint).
+
 # How to use ESLint
 
 The ESLint configuration can be found in [.eslintrc.cjs](../../.eslintrc.cjs).

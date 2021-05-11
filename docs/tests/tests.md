@@ -10,6 +10,8 @@ If one or more test execution is failing, the main **GitHub workflow will fail**
 
 The test files code coverage report can be generated locally and is also sent to codecov by the main Github workflow. Read more in [coverage](../coverage/coverage.md).
 
+If you want to keep test files check [How to use tests](#How-to-use-tests). Otherwise see [How to remove tests](#How-to-remove-tests)
+
 # How to use tests
 
 The test script can be found in [script/test/test.js](../../script/test/test.js).

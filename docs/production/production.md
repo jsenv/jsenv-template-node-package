@@ -6,6 +6,8 @@ Production must be explicitely enabled using `--conditions=production` to avoid 
 
 If you look into `"imports"` in [package.json](../../package.json#L28) you will see that `#env` can either resolve to [env.dev.js](../../env.dev.js) or [env.prod.js](../../env.prod.js). The ability to remap an import specifier comes from Node.js and is documented in [package conditions](https://nodejs.org/docs/latest-v15.x/api/packages.html#packages_resolving_user_conditions).
 
+If you want to keep this ability, check [How to use production mode](#how-to-use-production-mode). Otherwise see [How to remove production mode](#how-to-remove-production-mode).
+
 # How to use production mode
 
 This feature is designed for two purposes:

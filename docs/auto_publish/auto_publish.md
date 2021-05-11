@@ -6,6 +6,8 @@ The main GitHub workflow is publishing new version of the package to npm **autom
 
 This is implemented with `needs` + `if` on `release` in [.github/workflows/main.yml](../../.github/workflows/main.yml#L53) and `publish package` in [.github/workflows/main.yml](../../.github/workflows/main.yml#64).
 
+If you want to keep auto publish on npm, check [How to use auto publish](#how-to-use-auto-publish). Otherwise see [How to remove auto publish](#how-to-remove-auto-publish).
+
 # How to use auto publish
 
 The code responsible to publish the package on npm is [.github/workflows/main/publish-package.js](../../.github/workflows/main/publish-package.js). As explained, if the package registry already got this package version this code will not publish anything.
