@@ -2,7 +2,9 @@
 
 # Jsenv node package template
 
-This repository is meant to serve as a general template for how to set up repositories publishing a node package on npm. Use this repository as a way of finding example files, and use the following checklist to ensure that you've set up the repository correctly.
+This repository is meant to serve as a general template for how to set up repositories publishing a node package on npm.
+
+Use this repository as a way of finding example files and use the following checklist to ensure that you've set up the repository correctly.
 
 **Warning**: It's a beta version.
 
@@ -68,12 +70,14 @@ If you want to keep auto publish on npm, check [How to use auto publish](./docs/
 
 ## importmap review
 
-TODO
+An importmap file is part of this codebase to make ESLint and VSCode capable to resolve imports.
+
+If you want to keep that check [How to use importmap](./docs/importmap/importmap.md#how-to-use-importmap). Otherwise see [How to remove importmap](./docs/importmap/importmap.md#how-to-remove-importmap).
 
 - [ ] importmap review done
 
 ## Replace readme
 
-TODO
+This readme documents how to use the template. You can replace this readme by [readme.template.md](./readme.template.md).
 
 - [ ] Readme replaced
