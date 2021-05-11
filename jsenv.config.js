@@ -6,5 +6,3 @@ export const babelPluginMap = getBabelPluginMapForNode({
   ...jsenvBabelPluginMap,
   // add more babel plugin here if needed
 })
-
-export const importMapFileRelativeUrl = "./importmap.dev.importmap"

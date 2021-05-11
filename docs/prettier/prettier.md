@@ -41,11 +41,11 @@ Format all files in the project.
 
 # How to remove prettier
 
-If for some reason you want to remove prettier from this repository, follow the steps below.
+If you want to remove prettier from this repository, follow the steps below.
 
 1. Remove `check format` step in [.github/workflows/main.yml](../../.github/workflows/main.yml#L45)
-2. Remove prettier scripts from `"scripts"` in [package.json](../../package.json#L48)
-3. Remove `"prettier"` from `"devDependencies"` in [package.json](../../package.json#L69)
-4. Remove `"@jsenv/prettier-check-project"` from `"devDependencies"` in [package.json](../../package.json#L67)
-5. Delete [.prettierignore](../../.prettierignore)
-6. Delete [.prettierrc.yml](../../.prettierrc.yml)
+2. Remove prettier scripts from `"scripts"` in [package.json](../../package.json#L51)
+3. Delete [.prettierignore](../../.prettierignore)
+4. Delete [.prettierrc.yml](../../.prettierrc.yml)
+5. Remove `"@jsenv/prettier-check-project"` from `"devDependencies"` in [package.json](../../package.json#L71)
+6. Remove `"prettier"` from `"devDependencies"` in [package.json](../../package.json#L74)

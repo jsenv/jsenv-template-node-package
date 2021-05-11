@@ -23,11 +23,13 @@ Execute ESLint command on all files.
 
 # How to remove ESLint
 
-If for some reason you want to remove ESLint from this repository, follow the steps below.
+If you want to remove ESLint from this repository, follow the steps below.
 
 1. Remove `check lint` step in [.github/workflows/main.yml](../../.github/workflows/main.yml#L43)
-2. Remove `"eslint-check"` from `"scripts"` in [package.json](../../package.json#L42)
-3. Remove `"eslint"` from `"devDependencies"` in [package.json](../../package.json#L68)
-4. Remove `"@jsenv/eslint-config"` from `"devDependencies"` in [package.json](../../package.json#L63)
-5. Delete [.eslintignore](../../.eslintignore)
-6. Delete [.eslintrc.cjs](../../.eslintrc.cjs)
+2. Remove `"eslint-check"` from `"scripts"` in [package.json](../../package.json#L44)
+3. Delete [.eslintrc.cjs](../../.eslintrc.cjs)
+4. Delete [.eslintignore](../../.eslintignore)
+5. Remove `"@jsenv/eslint-config"` from `"devDependencies"` in [package.json](../../package.json#L66)
+6. Remove `"@jsenv/importmap-eslint-resolver"` from `"devDependencies"` in [package.json](../../package.json#L68)
+7. Remove `"eslint-plugin-import"` from `"devDependencies"` in [package.json](../../package.json#L73)
+8. Remove `"eslint"` from `"devDependencies"` in [package.json](../../package.json#L72)

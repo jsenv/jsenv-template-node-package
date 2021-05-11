@@ -11,7 +11,7 @@ to resolve imports.
 */
 
 import { getImportMapFromProjectFiles, writeImportMapFile } from "@jsenv/node-module-import-map"
-import { projectDirectoryUrl, importMapFileRelativeUrl } from "../../jsenv.config.js"
+import { projectDirectoryUrl } from "../../jsenv.config.js"
 
 await writeImportMapFile(
   [
@@ -23,7 +23,7 @@ await writeImportMapFile(
   ],
   {
     projectDirectoryUrl,
-    importMapFileRelativeUrl,
+    importMapFileRelativeUrl: "./importmap.dev.importmap",
     jsConfigFile: true,
   },
 )
