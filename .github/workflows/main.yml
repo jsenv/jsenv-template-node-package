@@ -1,7 +1,7 @@
 # This file configure a GitHub workflow responsible to perform
 # various checks related to the codebase.
 #
-# For that reason it's runned on every pull request and push to master.
+# For that reason it's runned on every pull request and push to main.
 #
 # It does the following:
 #  - Check linting passes (no eslint error on files)
@@ -18,10 +18,10 @@ name: main
 on:
   push:
     branches:
-      - master
+      - main
   pull_request:
     branches:
-      - master
+      - main
 
 jobs:
   test:
