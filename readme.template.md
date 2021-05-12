@@ -36,7 +36,7 @@ npm install @jsenv/template-node-package
 # Example
 
 <details>
-  <summary>Create <code>example.js</code></summary>
+  <summary>1. Create <code>example.js</code></summary>
 
 ```js
 import { getMessage } from "@jsenv/template-node-package"
@@ -55,17 +55,12 @@ console.log(getMessage())
 </details>
 
 <details>
-  <summary>Execute with node</summary>
-
-`example.js` can be executed with the `node` command.
+  <summary>2. Execute with node</summary>
 
 ```console
-node ./example.js
+> node ./example.js
+Hello dev!
 ```
-
-It would log `Hello dev!` in the terminal as shown in the screenshot below.
-
-![screenshot of terminal after execution with node](./TODO.png)
 
 </details>
 
@@ -107,11 +102,25 @@ message // "Hello dev!"
 
 # Production mode
 
-The code of this npm package behaves differently when executed with `--conditions=production`: [getMessage](#getmessage) and [getMessageAsync](#getMessageAsync) return a different string (`"Hello prod!"`).
+The code of this npm package behaves differently when executed with `--conditions=production` as shown below.
 
-Read more in [How to use production mode](./docs/production/production.md).
+`file.js`
 
-> Here the effect of `production` mode is trivial because it's a dumb package. With a real package, it would have more important differences.
+```js
+import { getMessage } from "@jsenv/template-node-package"
+
+console.log(getMessage())
+```
+
+```console
+> node ./file.js
+Hello dev!
+```
+
+```console
+> node --conditions=production ./file.js
+Hello prod!
+```
 
 # Development
 

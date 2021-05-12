@@ -1,3 +1,8 @@
+<!--
+TODO: show coverage at 50% because 100% miss the red lines
+review doc and maybe reword a bit
+-->
+
 # Coverage
 
 Code coverage shows which part of the source files code have been covered by the execution of test files.
