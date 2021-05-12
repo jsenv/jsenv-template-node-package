@@ -31,7 +31,9 @@ If you want to remove ESLint from this repository, follow the steps below.
 2. Remove `"eslint-check"` from `"scripts"` in [package.json](../../package.json#L44)
 3. Delete [.eslintrc.cjs](../../.eslintrc.cjs)
 4. Delete [.eslintignore](../../.eslintignore)
-5. Remove `"@jsenv/eslint-config"` from `"devDependencies"` in [package.json](../../package.json#L66)
-6. Remove `"@jsenv/importmap-eslint-resolver"` from `"devDependencies"` in [package.json](../../package.json#L68)
-7. Remove `"eslint-plugin-import"` from `"devDependencies"` in [package.json](../../package.json#L73)
-8. Remove `"eslint"` from `"devDependencies"` in [package.json](../../package.json#L72)
+5. Remove these `"devDependencies"` in [package.json](../../package.json#L66)
+
+   - `"@jsenv/eslint-config"`
+   - `"@jsenv/importmap-eslint-resolver"`
+   - `"eslint-plugin-import"`
+   - `"eslint"`

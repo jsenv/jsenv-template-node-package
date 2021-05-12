@@ -12,23 +12,14 @@ The prettier configuration can be found in [.prettierrc.yml](../../.prettierrc.y
 
 Install [prettier-vscode](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode) and **let the extension do the formatting** when you save a file.
 
-List of commands related to prettier:
+This repository has pre-configured some commands related to prettier:
 
 <details>
   <summary>npm run prettier-check</summary>
 
-Logs all files matching and not matching prettier format.
+Logs files matching and not matching prettier formatting.
 
 ![stuff](./prettier-check-terminal.png)
-
-</details>
-
-<details>
-  <summary>npm run prettier-format-stage</summary>
-
-Format all files in the [git staging area](https://softwareengineering.stackexchange.com/a/119790)
-
-![stuff](./prettier-format-stage-terminal.png)
 
 </details>
 
@@ -41,6 +32,15 @@ Format all files in the project.
 
 </details>
 
+<details>
+  <summary>npm run prettier-format-stage</summary>
+
+Format all files in the [git staging area](https://softwareengineering.stackexchange.com/a/119790)
+
+![stuff](./prettier-format-stage-terminal.png)
+
+</details>
+
 # How to remove prettier
 
 If you want to remove prettier from this repository, follow the steps below.
@@ -48,5 +48,6 @@ If you want to remove prettier from this repository, follow the steps below.
 1. Remove prettier scripts from `"scripts"` in [package.json](../../package.json#L51)
 2. Delete [.prettierignore](../../.prettierignore)
 3. Delete [.prettierrc.yml](../../.prettierrc.yml)
-4. Remove `"@jsenv/prettier-check-project"` from `"devDependencies"` in [package.json](../../package.json#L71)
-5. Remove `"prettier"` from `"devDependencies"` in [package.json](../../package.json#L74)
+4. Remove these `"devDependencies"` in [package.json](../../package.json#L71):
+   - `"@jsenv/prettier-check-project"`
+   - `"prettier"`

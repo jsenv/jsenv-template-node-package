@@ -1,6 +1,6 @@
-import { dev } from "#env"
+import { DEV } from "#env"
 
-const message = dev ? "Hello dev!" : "Hello prod!"
+const message = DEV ? "Hello dev!" : "Hello prod!"
 
 export const getMessage = () => {
   return message
