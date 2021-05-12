@@ -9,11 +9,9 @@ executeTestPlan({
         launch: launchNode,
       },
       "node-prod": {
-        launch: (params) => {
-          return launchNode({
-            ...params,
-            commandLineOptions: ["--conditions=production"],
-          })
+        launch: launchNode,
+        launchParams: {
+          commandLineOptions: ["--conditions=production"],
         },
       },
     },

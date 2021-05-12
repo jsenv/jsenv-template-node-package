@@ -4,43 +4,33 @@
 
 All test files are inside the [test/](./test/) directory and ends with `.test.js`.
 
-These files are executed twice, the second execution ensure code specific to _production_ is also tested. Read more in [Production mode](../production/production.md#How-to-use-production-mode).
+If one or more test is failing, the main GitHub **workflow will fail** during [check tests](../../.github/workflows/main.yml#L47) step.
 
-If one or more test execution is failing, the main **GitHub workflow will fail** during [check tests](../../.github/workflows/main.yml#L47) step.
-
-The test files code coverage report can be generated locally and is also sent to codecov by the main Github workflow. Read more in [coverage](../coverage/coverage.md).
+Code coverage from test files is monitored, this is documented in [docs/coverage/coverage.md](../coverage/coverage.md).
 
 If you want to keep test files check [How to use tests](#How-to-use-tests). Otherwise see [How to remove tests](#How-to-remove-tests)
 
 # How to use tests
 
-The test script can be found in [script/test/test.js](../../script/test/test.js).
+Test files are written using jsenv philosophy: **Test file can be executed with the `node` command**.
 
-## Executing all tests
-
-<details>
-  <summary>npm test</summary>
-
-Run all tests
-
-![stuff](./test-terminal.png)
-
-</details>
-
-## Executing a single test
-
-Tests are written using [jsenv](https://github.com/jsenv/jsenv-core). This is a test runner which see test files as regular files so each test file can be executed independently.
-
-<details>
-  <summary>node test/message.test.js</summary>
-
-![Screenshot of terminal after test execution with node](./test-node.png)
+```console
+> node ./test/message.test.js
+passed
+```
 
 See [test/message.test.js](../../test/message.test.js)
 
-</details>
+Test file are also testing the production mode, they can be tested using `--conditions=production`
 
-And debugged independently using [VSCode debugger for Node.js](https://code.visualstudio.com/docs/nodejs/nodejs-debugging) or any debugging recipe documented in [Node.js debugging guide](https://nodejs.org/en/docs/guides/debugging-getting-started).
+```console
+> node --conditions=production ./test/message.test.js
+passed
+```
+
+## Debug a test
+
+It is recommanded to use VSCode integrated debugger for Node.js documented [here](https://code.visualstudio.com/docs/nodejs/nodejs-debugging).
 
 <details>
   <summary>See test file debugging in VSCode</summary>
@@ -48,6 +38,16 @@ And debugged independently using [VSCode debugger for Node.js](https://code.visu
 ![Screencast of debugging a test file in VSCode](./test-debug-vscode.gif)
 
 </details>
+
+Any debugging recipe documented in [Node.js debugging guide](https://nodejs.org/en/docs/guides/debugging-getting-started) works too.
+
+## Executing all tests
+
+All tests can be executed at once using `npm test`. This script is configured to execute [script/test/test.js](../../script/test/test.js).
+
+Test files are executed twice, the second execution ensure code specific to _production_ is also tested.
+
+![stuff](./test-terminal.png)
 
 # How to remove tests
 
