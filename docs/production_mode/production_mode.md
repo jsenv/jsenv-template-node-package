@@ -2,7 +2,7 @@
 
 Production mode is the ability to make code behave differently depending if it's executed normally or in production mode.
 
-It can be used to do things only during development or production.
+It can be used to do things only during development (or production).
 
 ```js
 import { DEV } from "#env"
@@ -20,7 +20,7 @@ import { DATABASE_URL } from "#env"
 console.log(`The database url is ${DATABASE_URL}`)
 ```
 
-This repository has a basic file structure enabling production mode, if you want to keep this ability, check [How to use production mode](#how-to-use-production-mode). Otherwise see [How to remove production mode](#how-to-remove-production-mode).
+This repository has preconfigured a production mode, if you want to keep this ability, check [How to use production mode](#how-to-use-production-mode). Otherwise see [How to remove production mode](#how-to-remove-production-mode).
 
 # How to use production mode
 
@@ -34,7 +34,7 @@ import { DEV } from "#env"
 console.log(DEV ? "development" : "production")
 ```
 
-Let's see what happens when executing `index.js` with node then with `--conditions=production`.
+Here is what happens when `index.js` is executed normally and with `--conditions=production`.
 
 ```console
 > node index.js
@@ -46,9 +46,9 @@ development
 production
 ```
 
-What happens is that Node.js remap `#env` to [env.dev.js](../../env.dev.js) by default or to [env.prod.js](../../env.prod.js) when `--conditions=production` is passed.
+What happens is that Node.js remap `#env` to [env.dev.js](../../env.dev.js) by default and to [env.prod.js](../../env.prod.js) when `--conditions=production` is passed.
 
-This configuration is visible inside `"imports"` field in our [package.json](../../package.json#L28).
+This is configured by `"imports"` field in our [package.json](../../package.json#L28).
 
 # How to remove production mode
 

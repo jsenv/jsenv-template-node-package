@@ -30,7 +30,7 @@ Write commonjs files into `dist/dev/`.
 
 Write commonjs files into `dist/prod/`.
 
-These files are generated to make commonjs build compatible with [production mode](../production/production.md) there is a production build.
+These files are generated to make commonjs build compatible with [production mode](../production_mode/production_mode.md) there is a production build.
 
 </details>
 
@@ -56,8 +56,8 @@ Follow these steps to remove the CommonJS build from this repository.
    - ".": {
    -   "import": "./main.js",
    -   "require": {
-   -     "production": "./dist/prod/template-node-package.prod.cjs",
-   -     "default": "./dist/dev/template-node-package.dev.cjs"
+   -     "production": "./dist/prod/template_node_package.prod.cjs",
+   -     "default": "./dist/dev/template_node_package.dev.cjs"
    -   }
    - },
    + ".": "./main.js",
@@ -66,7 +66,7 @@ Follow these steps to remove the CommonJS build from this repository.
 7. Update `"main"` in [package.json](../../package.json#L35)
 
    ```diff
-   - "main": "dist/dev/template-node-package.dev.cjs",
+   - "main": "dist/dev/template_node_package.dev.cjs",
    + "main": "main.js",
    ```
 
