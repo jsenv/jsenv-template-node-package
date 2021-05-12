@@ -5,7 +5,7 @@
     "../../src/message.js"
   ],
   "sourcesContent": [
-    "import { dev } from \"#env\"\n\nconst message = dev ? \"Hello dev!\" : \"Hello prod!\"\n\nexport const getMessage = () => {\n  return message\n}\n\nexport const getMessageAsync = async () => {\n  return message\n}\n"
+    "import { DEV } from \"#env\"\n\nconst message = DEV ? \"Hello dev!\" : \"Hello prod!\"\n\nexport const getMessage = () => {\n  return message\n}\n\nexport const getMessageAsync = async () => {\n  return message\n}\n"
   ],
   "names": [
     "message",
