@@ -11,8 +11,8 @@ await buildProject({
   format: "commonjs",
   entryPointMap: {
     "./main.js": isProduction
-      ? "./template-node-package.prod.cjs"
-      : "./template-node-package.dev.cjs",
+      ? "./template_node_package.prod.cjs"
+      : "./template_node_package.dev.cjs",
   },
   babelPluginMap: getBabelPluginMapForNode(),
   buildDirectoryClean: true,

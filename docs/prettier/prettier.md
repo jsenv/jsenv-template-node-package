@@ -2,7 +2,7 @@
 
 The codebase uses [prettier](https://prettier.io) to ensure files formatting is coherent and pretty.
 
-If prettier configuration is not respected, the main **GitHub workflow will log** which files are incorrect during [check format step](../../.github/workflows/ci.yml#L33).
+If prettier configuration is not respected, nothing special happen.
 
 If you want to keep prettier, check [How to use Prettier](#How-to-use-prettier). Otherwise see [How to remove prettier](#How-to-remove-prettier)
 
@@ -45,9 +45,8 @@ Format all files in the project.
 
 If you want to remove prettier from this repository, follow the steps below.
 
-1. Remove `check format` step in [.github/workflows/main.yml](../../.github/workflows/main.yml#L45)
-2. Remove prettier scripts from `"scripts"` in [package.json](../../package.json#L51)
-3. Delete [.prettierignore](../../.prettierignore)
-4. Delete [.prettierrc.yml](../../.prettierrc.yml)
-5. Remove `"@jsenv/prettier-check-project"` from `"devDependencies"` in [package.json](../../package.json#L71)
-6. Remove `"prettier"` from `"devDependencies"` in [package.json](../../package.json#L74)
+1. Remove prettier scripts from `"scripts"` in [package.json](../../package.json#L51)
+2. Delete [.prettierignore](../../.prettierignore)
+3. Delete [.prettierrc.yml](../../.prettierrc.yml)
+4. Remove `"@jsenv/prettier-check-project"` from `"devDependencies"` in [package.json](../../package.json#L71)
+5. Remove `"prettier"` from `"devDependencies"` in [package.json](../../package.json#L74)

@@ -11,7 +11,7 @@ This document describes the process for running this application on your local c
 **Command line tools**:
 
 - [git](https://git-scm.com/) version 2.26.0 or above
-- [node](https://nodejs.org/en/) version 14.9.0 or above
+- [node](https://nodejs.org/en/) version 14.17.0 or above
 
 Then, run the following commands:
 

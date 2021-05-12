@@ -2,7 +2,7 @@
 
 The codebase uses [ESLint](https://eslint.org) to lint files.
 
-If ESLint rules are not respected, the main **GitHub workflow will fail** during [check lint step](../../.github/workflows/main.yml#L45).
+If ESLint rules are not respected, the main GitHub **workflow will fail** during [check lint step](../../.github/workflows/main.yml#L45).
 
 If you want to keep ESLint, check [How to use ESLint](#How-to-use-eslint). Otherwise see [How to remove ESLint](#How-to-remove-eslint).
 
@@ -17,7 +17,7 @@ List of commands related to ESLint:
 <details>
   <summary>npm run eslint-check</summary>
 
-Execute ESLint command on all files.
+This command is an alias to `eslint .`
 
 ![stuff](./eslint-check-terminal.png)
 

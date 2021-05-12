@@ -8,7 +8,7 @@
     "url": "https://github.com/jsenv/jsenv-template-node-package"
   },
   "engines": {
-    "node": ">=14.9.0"
+    "node": ">=14.17.0"
   },
   "publishConfig": {
     "access": "public"
@@ -18,11 +18,10 @@
     ".": {
       "import": "./main.js",
       "require": {
-        "production": "./dist/prod/template-node-package.prod.cjs",
-        "default": "./dist/dev/template-node-package.dev.cjs"
+        "production": "./dist/prod/template_node_package.prod.cjs",
+        "default": "./dist/dev/template_node_package.dev.cjs"
       }
     },
-    "./": "./",
     "./*": "./*"
   },
   "imports": {
@@ -32,7 +31,7 @@
     }
   },
   "module": "main.js",
-  "main": "dist/dev/template-node-package.dev.cjs",
+  "main": "dist/dev/template_node_package.dev.cjs",
   "files": [
     "/dist/",
     "/src/",
@@ -56,17 +55,14 @@
     "prepublishOnly": "node ./script/transform-package/remove-postinstall.js && npm run dist",
     "postpublish": "node ./script/transform-package/restore-postinstall.js"
   },
-  "dependencies": {
-    "@jsenv/util": "4.1.0"
-  },
   "devDependencies": {
     "@jsenv/assert": "2.2.5",
     "@jsenv/codecov-upload": "3.4.3",
-    "@jsenv/core": "18.0.2",
+    "@jsenv/core": "18.1.2",
     "@jsenv/eslint-config": "15.0.1",
     "@jsenv/github-release-package": "1.2.2",
     "@jsenv/importmap-eslint-resolver": "5.0.0",
-    "@jsenv/node-module-import-map": "13.4.1",
+    "@jsenv/node-module-import-map": "13.4.2",
     "@jsenv/package-publish": "1.5.2",
     "@jsenv/prettier-check-project": "5.6.1",
     "eslint": "7.26.0",

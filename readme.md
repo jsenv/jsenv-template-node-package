@@ -10,13 +10,12 @@ This repository is meant to serve as a general template for how to set up reposi
 
 Go through this checklist after creating your repository.
 
-- [ ] [ESLint](./docs/eslint/eslint.md)
-- [ ] [Prettier](./docs/prettier/prettier.md)
-- [ ] [Test](./docs/test/test.md)
-- [ ] [Coverage](./docs/coverage/coverage.md)
+- [ ] Read [docs/eslint/eslint.md](./docs/eslint/eslint.md)
+- [ ] Read [docs/prettier/prettier.md](./docs/prettier/prettier.md)
 - [ ] [Production mode](./docs/production/production.md)
+- [ ] Read [docs/tests/tests.md](./docs/tests/tests.md)
+- [ ] [Coverage](./docs/coverage/coverage.md)
 - [ ] [Build](./docs/build/build.md)
 - [ ] [Auto publish on npm](./docs/auto_publish/auto_publish.md)
 - [ ] [importmap](./docs/importmap/importmap.md)
-
-Finally, this readme documents how to use the template. You can replace it by [readme.template.md](./readme.template.md).
+- [ ] Replace this readme by [readme.template.md](./readme.template.md)

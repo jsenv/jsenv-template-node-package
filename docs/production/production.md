@@ -1,16 +1,6 @@
 # Production mode
 
-The code of this npm package behaves differently when executed with `--conditions=production`.
-
-Production must be explicitely enabled using `--conditions=production` to avoid accidentaly trigger code supposed to execute in production during development.
-
-If you look into `"imports"` in [package.json](../../package.json#L28) you will see that `#env` can either resolve to [env.dev.js](../../env.dev.js) or [env.prod.js](../../env.prod.js). The ability to remap an import specifier comes from Node.js and is documented in [package conditions](https://nodejs.org/docs/latest-v15.x/api/packages.html#packages_resolving_user_conditions).
-
-If you want to keep this ability, check [How to use production mode](#how-to-use-production-mode). Otherwise see [How to remove production mode](#how-to-remove-production-mode).
-
-# How to use production mode
-
-This feature is designed for two purposes:
+<!-- TODO: write some lines to explain what is production mode -->
 
 - Write code specific to development (verbose logs, extensive check to help developer, etc)
 
@@ -34,6 +24,25 @@ This feature is designed for two purposes:
 
   export const logBackendUrl = () => console.log(backendUrl)
   ```
+
+If you want to keep this ability, check [How to use production mode](#how-to-use-production-mode). Otherwise see [How to remove production mode](#how-to-remove-production-mode).
+
+# How to use production mode
+
+The code of this npm package behaves differently when executed with `--conditions=production`.
+
+If you look into `"imports"` in [package.json](../../package.json#L28) you will see that `#env` can either resolve to [env.dev.js](../../env.dev.js) or [env.prod.js](../../env.prod.js). The ability to remap an import specifier comes from Node.js and is documented in [package conditions](https://nodejs.org/docs/latest-v15.x/api/packages.html#packages_resolving_user_conditions).
+
+<!--
+put this explanation somewhere?
+
+Production must be explicitely enabled using `--conditions=production` to avoid accidentaly trigger code supposed to execute in production during development. -->
+
+<!--
+TODO: write an example like
+
+node --conditions=production index.js
+ -->
 
 ## Test production code
 
