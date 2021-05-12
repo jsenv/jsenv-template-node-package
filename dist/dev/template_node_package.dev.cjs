@@ -2,7 +2,7 @@
 
 Object.defineProperty(exports, '__esModule', { value: true });
 
-const message = "Hello prod!";
+const message = "Hello dev!" ;
 const getMessage = () => {
   return message;
 };
@@ -13,4 +13,4 @@ const getMessageAsync = async () => {
 exports.getMessage = getMessage;
 exports.getMessageAsync = getMessageAsync;
 
-//# sourceMappingURL=template-node-package.prod.cjs.map
+//# sourceMappingURL=template_node_package.dev.cjs.map

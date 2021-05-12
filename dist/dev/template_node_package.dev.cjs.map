@@ -1,6 +1,6 @@
 {
   "version": 3,
-  "file": "template-node-package.prod.cjs",
+  "file": "template_node_package.dev.cjs",
   "sources": [
     "../../src/message.js"
   ],
@@ -12,5 +12,5 @@
     "getMessage",
     "getMessageAsync"
   ],
-  "mappings": ";;;;AAEA,MAAMA,OAAO,GAAwB,aAArC;MAEaC,UAAU,GAAG,MAAM;AAC9B,SAAOD,OAAP;AACD;MAEYE,eAAe,GAAG,YAAY;AACzC,SAAOF,OAAP;AACD;;;;;"
+  "mappings": ";;;;AAEA,MAAMA,OAAO,GAAS,YAAH,CAAnB;MAEaC,UAAU,GAAG,MAAM;AAC9B,SAAOD,OAAP;AACD;MAEYE,eAAe,GAAG,YAAY;AACzC,SAAOF,OAAP;AACD;;;;;"
 }

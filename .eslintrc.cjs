@@ -1,6 +1,4 @@
 /**
- * Eslint does not support esmodule in the config file. For that reason
- * this file ends with the .cjs extension.
  *
  * This file uses "@jsenv/eslint-config" to configure ESLint
  * https://github.com/jsenv/jsenv-eslint-config#eslint-config
@@ -67,12 +65,16 @@ const eslintConfig = composeEslintConfig(
     overrides: [
       {
         files: ["**/*.cjs"],
+        env: {
+          commonjs: true,
+        },
         // inside *.cjs files. restore commonJS "globals"
         globals: {
           __filename: true,
           __dirname: true,
           require: true,
         },
+
         // inside *.cjs files, use commonjs module resolution
         settings: {
           "import/resolver": {
