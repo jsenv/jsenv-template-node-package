@@ -36,8 +36,6 @@ HTML files can be opened in a browser to explore coverage. Red and yellow parts 
 
 ![stuff](./codecov-report-html.png)
 
-> The coverage was artificially decreased to make this screenshot
-
 ## Codecov
 
 To enable integration into GitHub, coverage must be sent to codecov after each push to a pull request or the repository main branch. This is done by `upload coverage` in [./.github/workflows/main.yml](../../.github/workflows/main.yml).
@@ -48,8 +46,7 @@ If you want to enable this, see [Configure codecov](#Configure-codecov), otherwi
 
 1. Create an account on codecov at https://about.codecov.io/sign-up
 2. Install codecov GitHub application https://github.com/apps/codecov
-3. Give repository access to codecov application
-4. Review [codecov.yml](../../codecov.yml)
+3. Review [codecov.yml](../../codecov.yml)
 
 ### Remove codecov
 
