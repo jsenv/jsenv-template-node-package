@@ -63,7 +63,7 @@
   "devDependencies": {
     "@jsenv/assert": "2.2.5",
     "@jsenv/codecov-upload": "3.4.3",
-    "@jsenv/core": "18.1.2",
+    "@jsenv/core": "18.1.4",
     "@jsenv/eslint-config": "15.0.1",
     "@jsenv/github-release-package": "1.2.3",
     "@jsenv/importmap-eslint-resolver": "5.0.0",
