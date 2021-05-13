@@ -46,11 +46,9 @@ Generates both `dist/dev/` and `dist/prod/`
 Follow these steps to remove the CommonJS build from this repository.
 
 1. Remove `&& npm run dist` from `"prepublishOnly"` in [package.json](../../package.json#L56)
-2. Remove `"dist"` from `"scripts"` in [package.json](../../package.json#L33)
-3. Remove `"build-dev"` from `"scripts"` in [package.json](../../package.json#L48)
-4. Remove `"build-prod"` from `"scripts"` in [package.json](../../package.json#L49)
-5. Delete [script/build/](../../script/build/) directory
-6. Simplify `"."` from `"exports"` in [package.json](../../package.json#L18)
+2. Remove the following scripts in [package.json](../../package.json#L33): `"dist"`, `"build-dev"`, `"build-prod"`
+3. Delete [script/build/](../../script/build/) directory
+4. Simplify `"."` from `"exports"` in [package.json](../../package.json#L18)
 
    ```diff
    - ".": {
@@ -63,17 +61,17 @@ Follow these steps to remove the CommonJS build from this repository.
    + ".": "./main.js",
    ```
 
-7. Update `"main"` in [package.json](../../package.json#L35)
+5. Update `"main"` in [package.json](../../package.json#L35)
 
    ```diff
    - "main": "dist/dev/template_node_package.dev.cjs",
    + "main": "main.js",
    ```
 
-8. Remove `"module"` in [package.json](../../package.json#L34)
+6. Remove `"module": "main.js"` in [package.json](../../package.json#L34)
 
-9. Remove `"/dist/"` from `"files"` in [package.json](../../package.json#L37)
+7. Remove `"/dist/"` from `"files"` in [package.json](../../package.json#L37)
 
-10. Remove `/dist/` in [.eslintignore](../../.eslintignore#L17)
+8. Remove `/dist/` in [.eslintignore](../../.eslintignore#L17)
 
-11. Remove `/dist/` in [.prettierignore](../../.prettierignore#L12)
+9. Remove `/dist/` in [.prettierignore](../../.prettierignore#L12)

@@ -21,20 +21,22 @@ If you want to keep code coverage check [How to use code coverage](#How-to-use-c
 
 # How to use code coverage
 
-List of commands related to the coverage:
+You can generate code coverage locally and navigate in the report using `npm run test-with-coverage` command.
 
 <details>
   <summary>npm run test-with-coverage</summary>
 
-Execute tests and collect associated code coverage. Also generates an html coverage report.
+Execute tests collecting the associated code coverage. Also generates a log and html coverage report.
 
 ![stuff](./test-with-coverage-terminal.png)
 
-HTML files can be opened in a browser to naviguate coverage and look like this:
+</details>
+
+HTML files can be opened in a browser to explore coverage. Red and yellow parts are not covered by test. It looks like this:
 
 ![stuff](./codecov-report-html.png)
 
-</details>
+> The coverage was artificially decreased to make this screenshot
 
 ## Codecov
 

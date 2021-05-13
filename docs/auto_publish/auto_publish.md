@@ -14,9 +14,25 @@ The code responsible to publish the package on npm is [.github/workflows/main/pu
 
 To enable this feature you need to:
 
-1. Create an access token for npm as documented in [Creating and viewing access tokens](https://docs.npmjs.com/creating-and-viewing-access-tokens)
+<details>
+  <summary>1. Create an access token for npm</summary>
 
-2. Add the npm token to the GitHub repository secrets as documented in [Creating encrypted secrets for a repository](https://docs.github.com/en/actions/reference/encrypted-secrets#creating-encrypted-secrets-for-a-repository). The secret name must be `NPM_TOKEN` or you need to update `secrets.NPM_TOKEN` in [.github/workflows/main.yml](../../.github/workflows/main.yml#L67)
+It is documented in [Creating and viewing access tokens](https://docs.npmjs.com/creating-and-viewing-access-tokens)
+
+</details>
+
+<details>
+  <summary>2. Add the npm token to the GitHub repository secrets</summary>
+
+It is documented in [Creating encrypted secrets for a repository](https://docs.github.com/en/actions/reference/encrypted-secrets#creating-encrypted-secrets-for-a-repository).
+
+The result looks like this:
+
+![stuff](./secrets_github.png)
+
+The secret name must be `NPM_TOKEN` or you need to update `secrets.NPM_TOKEN` in [.github/workflows/main.yml](../../.github/workflows/main.yml#L67)
+
+</details>
 
 ## Why auto publish ?
 

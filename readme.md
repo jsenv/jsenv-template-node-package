@@ -4,8 +4,6 @@
 
 This repository is meant to serve as a general template for how to set up repositories publishing a node package on npm. Use this repository as a way of finding example files and use the following checklist to ensure that you've set up the repository correctly.
 
-**Warning**: It's a beta version.
-
 # Install checklist
 
 Go through this checklist after creating a repository with this template. It gives an overview of the files to ensure you know how to use them.
@@ -19,3 +17,4 @@ Go through this checklist after creating a repository with this template. It giv
 - [ ] Read [docs/auto_publish/auto_publish.md](./docs/auto_publish/auto_publish.md)
 - [ ] Read [docs/importmap/importmap.md](./docs/importmap/importmap.md)
 - [ ] Replace this readme by [readme.template.md](./readme.template.md)
+- [ ] Update fields in [package.json](./package.json), especially `"name"`, `"description"` and `"author".`

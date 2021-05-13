@@ -3,6 +3,11 @@
   "version": "1.0.2",
   "description": "Package description",
   "license": "MIT",
+  "author": {
+    "name": "dmail",
+    "email": "dmaillard06@gmail.com",
+    "url": "https://twitter.com/damienmaillard"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/jsenv/jsenv-template-node-package"
