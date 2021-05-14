@@ -38,7 +38,7 @@ HTML files can be opened in a browser to explore coverage. Red and yellow parts 
 
 ## Codecov
 
-To enable integration into GitHub, coverage must be sent to codecov after each push to a pull request or the repository main branch. This is done by `upload coverage` in [./.github/workflows/main.yml](../../.github/workflows/main.yml).
+To enable integration into GitHub, coverage must be sent to codecov after each push to a pull request or the repository main branch. This is done by `upload coverage` in [./.github/workflows/main.yml](../../.github/workflows/main.yml#L47).
 
 If you want to enable this, see [Configure codecov](#Configure-codecov), otherwise see [Remove codecov](#Remove-codecov).
 
@@ -50,17 +50,17 @@ If you want to enable this, see [Configure codecov](#Configure-codecov), otherwi
 
 ### Remove codecov
 
-1. Remove `upload coverage` in [.github/workflows/main.yml](../../.github/workflows/main.yml)
-2. Remove `"@jsenv/codecov-upload"` from `"devDependencies"` in [package.json](../../package.json#)
-3. Remove `"upload-coverage"` from `"scripts"` in [package.json](../../package.json)
+1. Remove `upload coverage` in [.github/workflows/main.yml](../../.github/workflows/main.yml#L47)
+2. Remove `"@jsenv/codecov-upload"` from `"devDependencies"` in [package.json](../../package.json#L64)
+3. Remove `"upload-coverage"` from `"scripts"` in [package.json](../../package.json#L57)
 4. Delete [script/upload-coverage/](../../script/upload-coverage/) directory
 5. Delete [codecov.yml](../../codecov.yml)
 
 # How to remove code coverage
 
 1. Follow steps from [Remove codecov](#Remove-codecov)
-2. Replace `npm run test-with-coverage` by `npm test` in [.github/workflows/main.yml](../../.github/workflows/main.yml)
-3. Remove `"test-with-coverage"` from `"scripts"` in [package.json](../../package.json)
-4. Remove `/coverage/` in [.gitignore](../../.gitignore)
-5. Remove `/coverage/` in [.eslintignore](../../.eslintignore)
-6. Remove `/coverage/` in [.prettierignore](../../.prettierignore)
+2. Replace `npm run test-with-coverage` by `npm test` in [.github/workflows/main.yml](../../.github/workflows/main.yml#L46)
+3. Remove `"test-with-coverage"` from `"scripts"` in [package.json](../../package.json#L53)
+4. Remove `/coverage/` in [.gitignore](../../.gitignore#L9)
+5. Remove `/coverage/` in [.eslintignore](../../.eslintignore#L13)
+6. Remove `/coverage/` in [.prettierignore](../../.prettierignore#L8)

@@ -47,7 +47,6 @@ Test files are executed twice, the second execution ensure code specific to _pro
 If you don't need test or want to use an other test framework/library follow the steps below.
 
 1. Remove `check tests` step in [.github/workflows/main.yml](../../.github/workflows/main.yml#L45)
-2. Remove `"test"` from `"scripts"` in [package.json](../../package.json#L44)
-3. Remove `"test-with-coverage"` from `"scripts"` in [package.json](../../package.json#L47)
-4. Delete [script/test/](../../script/test/) directory
-5. Remove `"@jsenv/assert"` from `"devDependencies"` [package.json](../../package.json#L60)
+2. Remove `"test"` and `"test-with-coverage"` from `"scripts"` in [package.json](../../package.json#L46)
+3. Delete [script/test/](../../script/test/) directory
+4. Remove `"@jsenv/assert"` from `"devDependencies"` [package.json](../../package.json#L63)

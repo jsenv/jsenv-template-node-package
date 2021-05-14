@@ -4,11 +4,11 @@ The main GitHub workflow is publishing new version of the package to npm **autom
 
 > When `"version"` in `package.json` on the main branch is not published and if tests are passing, then publish this new version.
 
-This is implemented with `needs` + `if` on `release` in [.github/workflows/main.yml](../../.github/workflows/main.yml#L53) and `publish package` in [.github/workflows/main.yml](../../.github/workflows/main.yml#64).
-
 If you want to keep auto publish on npm, check [How to use auto publish](#how-to-use-auto-publish). Otherwise see [How to remove auto publish](#how-to-remove-auto-publish).
 
 # How to use auto publish
+
+It is implemented by `publish package` in [.github/workflows/main.yml](../../.github/workflows/main.yml#62).
 
 The code responsible to publish the package on npm is [.github/workflows/main/publish-package.js](../../.github/workflows/main/publish-package.js). As explained, if the package registry already got this package version this code will not publish anything.
 
@@ -30,7 +30,7 @@ The result looks like this:
 
 ![stuff](./secrets_github.png)
 
-The secret name must be `NPM_TOKEN` or you need to update `secrets.NPM_TOKEN` in [.github/workflows/main.yml](../../.github/workflows/main.yml#L67)
+The secret name must be `NPM_TOKEN` or you need to update `secrets.NPM_TOKEN` in [.github/workflows/main.yml](../../.github/workflows/main.yml#L65)
 
 </details>
 
@@ -53,6 +53,6 @@ As a bonus, it makes it possible to publish package on multiple registries at on
 
 # How to remove auto publish
 
-1. Remove `publish package` in [.github/workflows/main.yml](../../.github/workflows/main.yml#64).
+1. Remove `publish package` in [.github/workflows/main.yml](../../.github/workflows/main.yml#62).
 2. Delete [.github/workflows/main/publish-package.js](../../.github/workflows/main/publish-package.js)
-3. Remove `"@jsenv/package-publish"` from `"devDependencies"` in [package.json](../../package.json#L69)
+3. Remove `"@jsenv/package-publish"` from `"devDependencies"` in [package.json](../../package.json#L62)

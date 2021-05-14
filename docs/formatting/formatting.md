@@ -43,9 +43,7 @@ Format all files in the [git staging area](https://softwareengineering.stackexch
 
 If you want to remove prettier from this repository, follow the steps below.
 
-1. Remove prettier scripts from `"scripts"` in [package.json](../../package.json#L51)
+1. Remove prettier scripts from `"scripts"` in [package.json](../../package.json#L46)
 2. Delete [.prettierignore](../../.prettierignore)
 3. Delete [.prettierrc.yml](../../.prettierrc.yml)
-4. Remove these `"devDependencies"` in [package.json](../../package.json#L71):
-   - `"@jsenv/prettier-check-project"`
-   - `"prettier"`
+4. Remove `"@jsenv/prettier-check-project"` and `"prettier"` from `"devDependencies"` in [package.json](../../package.json#L62)

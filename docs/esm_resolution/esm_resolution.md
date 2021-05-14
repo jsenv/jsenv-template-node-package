@@ -22,7 +22,7 @@ Generating the importmap also create or updates `"paths"` in a _jsconfig.json_ f
 
 You should execute `npm run generate-import-map` everytime you update your `package.json` to keep them in sync.
 
-When `npm install` is executed the importmap will be generated. This is because there is a `"postinstall"` script in [package.json](../../package.json#L55). This _postinstall_ script is not meant to be executed by the users of the package, only by the developpers. For this reason, _postinstall_ script is removed from _package.json_ before publishing on npm by `"prepublishOnly"` script and restored by `"postpublish"`.
+When `npm install` is executed the importmap will be generated. This is because there is a `"postinstall"` script in [package.json](../../package.json#L58). This _postinstall_ script is not meant to be executed by the users of the package, only by the developpers. For this reason, _postinstall_ script is removed from _package.json_ before publishing on npm by `"prepublishOnly"` script and restored by `"postpublish"`.
 
 # How to remove ESM resolution from ESLint and VSCode
 
@@ -44,7 +44,7 @@ If you want to remove importmap from this repository, follow the steps below.
    + "node": {}
    ```
 
-5. Remove `"@jsenv/importmap-eslint-resolver"` from `"devDependencies"` in [package.json](../../package.json#L62)
+5. Remove `"@jsenv/importmap-eslint-resolver"` from `"devDependencies"` in [package.json](../../package.json#L68)
 6. Remove `/importmap.dev.importmap` in [.gitignore](../../.gitignore#L23)
 7. Delete `./importmap.dev.importmap` file
 8. Remove `"paths"` from `./jsconfig.json` file

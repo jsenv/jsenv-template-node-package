@@ -16,7 +16,7 @@ To keep this ability check [How to use commonJS backward compatibility](#how-to-
 
 # How to use commonJS backward compatibility
 
-When `npm publish` is executed, commonJS files are generated. This is because there is a `"prepublishOnly"` script in [package.json](../../package.json#L56) configured to execute `npm run dist`.
+When `npm publish` is executed, commonJS files are generated. This is because there is a `"prepublishOnly"` script in [package.json](../../package.json#L59) configured to execute `npm run dist`.
 
 The `npm run dist` command executes [script/build/build.js](../../script/build/build.js) which creates a commonJS build of the source files and write them into [dist/](../../dist/).
 
@@ -55,8 +55,8 @@ See also
 
 Follow these steps to remove the CommonJS build from this repository.
 
-1. Remove `&& npm run dist` from `"prepublishOnly"` in [package.json](../../package.json#L56)
-2. Remove the following scripts in [package.json](../../package.json#L33): `"dist"`, `"build-dev"`, `"build-prod"`
+1. Remove `&& npm run dist` from `"prepublishOnly"` in [package.json](../../package.json#L59)
+2. Remove `"dist"`, `"build-dev"`, `"build-prod"` from `"scripts"` in [package.json](../../package.json#L46)
 3. Delete [script/build/](../../script/build/) directory
 4. Simplify `"."` from `"exports"` in [package.json](../../package.json#L18)
 
@@ -71,14 +71,14 @@ Follow these steps to remove the CommonJS build from this repository.
    + ".": "./main.js",
    ```
 
-5. Update `"main"` in [package.json](../../package.json#L35)
+5. Update `"main"` in [package.json](../../package.json#L38)
 
    ```diff
    - "main": "dist/dev/template_node_package.dev.cjs",
    + "main": "main.js",
    ```
 
-6. Remove `"/dist/"` from `"files"` in [package.json](../../package.json#L37)
+6. Remove `"/dist/"` from `"files"` in [package.json](../../package.json#L40)
 
 7. Remove `/dist/` in [.eslintignore](../../.eslintignore#L17)
 
