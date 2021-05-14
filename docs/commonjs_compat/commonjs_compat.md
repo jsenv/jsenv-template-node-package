@@ -1,6 +1,6 @@
 # CommonJS backward compatibility
 
-The codebase is written is esm and meant to used as such with the `import` keyword:
+The codebase is written in esm and meant to used as such with the `import` keyword:
 
 ```js
 import { getMessage } from "@jsenv/template-node-package"
