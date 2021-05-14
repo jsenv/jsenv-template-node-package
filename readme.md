@@ -1,6 +1,6 @@
 <!-- https://github.com/orbitdb/repo-template -->
 
-# Jsenv node package template
+# Node ESM package template
 
 This repository is meant to serve as a general template for how to set up repositories publishing a node package on npm. Use this repository as a way of finding example files and use the following checklist to ensure that you've set up the repository correctly.
 
