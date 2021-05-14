@@ -35,7 +35,6 @@
       "default": "./env.dev.js"
     }
   },
-  "module": "main.js",
   "main": "dist/dev/template_node_package.dev.cjs",
   "files": [
     "/dist/",

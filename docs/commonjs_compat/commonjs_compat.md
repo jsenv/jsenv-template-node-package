@@ -1,20 +1,26 @@
-# Build
+# CommonJS backward compatibility
 
-This package got a build in order to be compatible with CommonJS. This allow package to be _required_ as in the code below.
+The codebase is written is esm and meant to used as such with the `import` keyword:
+
+```js
+import { getMessage } from "@jsenv/template-node-package"
+```
+
+CommonJS backard compatibility consists into having a second version of your files generated in commonJS. This allows a user of the package to also be able to use `require`:
 
 ```js
 const { getMessage } = require("@jsenv/template-node-package")
 ```
 
-This is possible thanks to the `"exports"` field in [package.json](../../package.json#L20) as explained in [Node.js documentation](https://nodejs.org/dist/latest-v16.x/docs/api/packages.html#packages_approach_2_isolate_state).
+To keep this ability check [How to use commonJS backward compatibility](#how-to-commonJS-backward-compatibility). Otherwise see [How to remove commonJS backward compatibility](#how-to-remove-commonJS-backward-compatibility).
 
-If you want to keep the commonjs build, check [How to use build](#how-to-use-build). Otherwise see [How to remove build](#how-to-remove-build).
+# How to use commonJS backward compatibility
 
-# How to use build
+When `npm publish` is executed, commonJS files are generated. This is because there is a `"prepublishOnly"` script in [package.json](../../package.json#L56) configured to execute `npm run dist`.
 
-There is a `"prepublishOnly"` script in [package.json](../../package.json#L56). This command is called by npm before publishing the package. It creates a commonjs build of the sources files and write them into `dist/`.
+The `npm run dist` command executes [script/build/build.js](../../script/build/build.js) which creates a commonJS build of the source files and write them into [dist/](../../dist/).
 
-This script is configured in [script/build/build.js](../../script/build/build.js).
+When the package is used by `import` or `require`, Node.js knows which file to choose thanks to the `"exports"` field in our [package.json](../../package.json#L23).
 
 List of commands related to the build:
 
@@ -30,7 +36,7 @@ Write commonjs files into `dist/dev/`.
 
 Write commonjs files into `dist/prod/`.
 
-These files are generated to make commonjs build compatible with [production mode](../production_mode/production_mode.md) there is a production build.
+These files are generated to make commonjs build compatible with [production mode](../production_mode/production_mode.md).
 
 </details>
 
@@ -40,6 +46,10 @@ These files are generated to make commonjs build compatible with [production mod
 Generates both `dist/dev/` and `dist/prod/`
 
 </details>
+
+See also
+
+- Node.js documentation on [dual module packages](https://nodejs.org/dist/latest-v16.x/docs/api/packages.html#packages_approach_2_isolate_state)
 
 # How to remove build
 
@@ -68,10 +78,8 @@ Follow these steps to remove the CommonJS build from this repository.
    + "main": "main.js",
    ```
 
-6. Remove `"module": "main.js"` in [package.json](../../package.json#L34)
+6. Remove `"/dist/"` from `"files"` in [package.json](../../package.json#L37)
 
-7. Remove `"/dist/"` from `"files"` in [package.json](../../package.json#L37)
+7. Remove `/dist/` in [.eslintignore](../../.eslintignore#L17)
 
-8. Remove `/dist/` in [.eslintignore](../../.eslintignore#L17)
-
-9. Remove `/dist/` in [.prettierignore](../../.prettierignore#L12)
+8. Remove `/dist/` in [.prettierignore](../../.prettierignore#L12)

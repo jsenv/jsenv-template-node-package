@@ -1,6 +1,6 @@
 <!-- https://github.com/github/docs/blob/main/tests/README.md -->
 
-# Tests
+# Testing
 
 All test files are inside the [test/](./test/) directory and ends with `.test.js`.
 
@@ -12,7 +12,7 @@ If you want to keep test files check [How to use tests](#How-to-use-tests). Othe
 
 # How to use tests
 
-Test files are written using jsenv philosophy: **Test file can be executed with the `node` command**.
+Test files are written using jsenv philosophy: **A test file can be executed with the `node` command**.
 
 ```console
 > node ./test/message.test.js
@@ -21,29 +21,22 @@ passed
 
 See [test/message.test.js](../../test/message.test.js)
 
-Test file are also testing the production mode, they can be tested using `--conditions=production`
-
-```console
-> node --conditions=production ./test/message.test.js
-passed
-```
-
 ## Debug a test
 
-It is recommanded to use VSCode integrated debugger for Node.js documented [here](https://code.visualstudio.com/docs/nodejs/nodejs-debugging).
+As previously mentioned, according to jsenv philosophy a test file executes like a classic file. It means you can use the debugging tool of classic files to debug test files.
 
-<details>
-  <summary>See test file debugging in VSCode</summary>
+The recommended way to debug a file is to use VSCode integrated debugger for Node.js.
 
 ![Screencast of debugging a test file in VSCode](./test-debug-vscode.gif)
 
-</details>
+See also
 
-Any debugging recipe documented in [Node.js debugging guide](https://nodejs.org/en/docs/guides/debugging-getting-started) works too.
+- VSCode debugger documentation: https://code.visualstudio.com/docs/nodejs/nodejs-debugging.
+- Node.js debugging recipe: https://nodejs.org/en/docs/guides/debugging-getting-started
 
 ## Executing all tests
 
-All tests can be executed at once using `npm test`. This script is configured to execute [script/test/test.js](../../script/test/test.js).
+Use `npm test` command. It is configured to execute [script/test/test.js](../../script/test/test.js) which is responsible to find and execute all your test files.
 
 Test files are executed twice, the second execution ensure code specific to _production_ is also tested.
 
