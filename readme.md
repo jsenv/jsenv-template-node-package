@@ -19,7 +19,7 @@ Go through this checklist after creating a repository with this template.
   - [Production mode](./docs/production_mode/production_mode.md)
   - [Testing](./docs/testing/testing.md)
   - [Code coverage](./docs/coverage/coverage.md)
-  - [CommonJS backward compatibility](./docs/commonjs_compat/commonjs_compat.md)
+  - [CommonJS compatibility](./docs/commonjs_compat/commonjs_compat.md)
   - [npm auto publish](./docs/auto_publish/auto_publish.md)
   - [import resolution](./docs/import_resolution/import_resolution.md)
 

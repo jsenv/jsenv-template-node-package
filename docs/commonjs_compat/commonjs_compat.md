@@ -1,4 +1,4 @@
-# CommonJS backward compatibility
+# CommonJS compatibility
 
 The codebase is written in esm and meant to used as such with the `import` keyword:
 
@@ -6,7 +6,7 @@ The codebase is written in esm and meant to used as such with the `import` keywo
 import { getMessage } from "@jsenv/template-node-package"
 ```
 
-CommonJS backard compatibility consists into having a second version of your files generated in commonJS. This allows a user of the package to also be able to use `require`:
+CommonJS compatibility consists into having a second version of your files generated in commonJS. This allows a user of the package to also be able to use `require`:
 
 ```js
 const { getMessage } = require("@jsenv/template-node-package")
