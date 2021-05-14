@@ -21,6 +21,6 @@ Go through this checklist after creating a repository with this template.
   - [Code coverage](./docs/coverage/coverage.md)
   - [CommonJS backward compatibility](./docs/commonjs_compat/commonjs_compat.md)
   - [npm auto publish](./docs/auto_publish/auto_publish.md)
-  - [ESM resolution](./docs/esm_resolution/esm_resolution.md)
+  - [import resolution](./docs/import_resolution/import_resolution.md)
 
 - [ ] Replace this readme by [readme.template.md](./readme.template.md)
