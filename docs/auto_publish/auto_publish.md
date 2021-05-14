@@ -36,9 +36,9 @@ The secret name must be `NPM_TOKEN` or you need to update `secrets.NPM_TOKEN` in
 
 ## Why auto publish ?
 
-In a continuous delivery workflow the code is pushed to production as soon as it reaches the prod branch. As a package author, I was sick of running `npm publish` several times per day.
+As a package author, I was sick of running `npm publish` several times per day. Then, I discovered continuous delivery workflow where code is deployed to production by pushing to the `prod` branch.
 
-Putting side by side "I am tired of running this everyday" and continuous delivery I realized that publishing a package to a registry is like pushing code to production. And it could and should be automated.
+Putting side by side "I am tired of running this everyday" and continuous delivery I realized that publishing a package to a registry is like pushing code to production. So it could and should be automated.
 
 As a bonus, it makes it possible to publish package on multiple registries at once (npm + github for example). You just have to add the registry url and token in [.github/workflows/main/publish-package.js](../../.github/workflows/main/publish-package.js)
 
