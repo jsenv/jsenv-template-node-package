@@ -16,7 +16,7 @@ To keep this ability check [How to use CommonJS compatibility](#how-to-use-commo
 
 # How to use CommonJS compatibility
 
-When `npm publish` is executed, commonJS files are generated. This is because there is a `"prepublishOnly"` script in [package.json](../../package.json#L59) configured to execute `npm run dist`.
+When `npm publish` is runned, commonJS files are generated. This is because there is a `"prepublishOnly"` script in [package.json](../../package.json#L59) configured to run `npm run dist`.
 
 The `npm run dist` command executes [script/build/build.js](../../script/build/build.js) which creates a commonJS build of the source files and write them into [dist/](../../dist/).
 

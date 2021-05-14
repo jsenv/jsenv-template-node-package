@@ -33,7 +33,7 @@ If you want to keep this, check [How ESLint and VSCode resolve imports](#How-ESL
 
 Knowing that:
 
-1. ESLint is configured to use an importmap file to resolve import by `importMapFileRelativeUrl` in [.eslintrc.cjs](../../.eslintrc.cjs#48).
+1. ESLint is configured to use an importmap file to resolve import by `importMapFileRelativeUrl` in [.eslintrc.cjs](../../.eslintrc.cjs#L48).
 
 2. VSCode can be configured to customize import resolution in a file named _jsconfig.json_.
 
@@ -41,11 +41,9 @@ It is possible to make ESLint and VSCode resolve imports like _node esm resoluti
 
 This is the responsability of the `npm run generate-import-map` command. This command executes [script/generate-import-map/generate-import-map.js](../../script/generate-import-map/generate-import-map.js) which is generating both the importmap and the _jsconfig.json_.
 
-In order generate importmap a first time, `npm run generate-import-map` is configured to run after `npm install` by the `"postinstall"` script in [package.json](../../package.json#L58). This _postinstall_ script is not meant to be executed by the users of the package, only by the developpers. For this reason, _postinstall_ script is removed from _package.json_ before publishing on npm by `"prepublishOnly"` and restored by `"postpublish"`.
+In order to generate importmap a first time, `npm run generate-import-map` is configured to run after `npm install` by the `"postinstall"` script in [package.json](../../package.json#L58). This _postinstall_ script is not meant to be executed by the users of the package, only by the developpers. For this reason, _postinstall_ script is removed from _package.json_ before publishing on npm by `"prepublishOnly"` and restored by `"postpublish"`.
 
-You should rerun `npm run generate-import-map` when something impacting _node esm resolution algorithm_ happens:
-
-Any of the following fields has changed in your _package.json_: `"name"`, `"imports"`, `"exports"`, `"dependencies"`, `"devDependencies"`.
+You should rerun `npm run generate-import-map` when something impacting _node esm resolution algorithm_ happens. It means when any of the following fields has changed in your _package.json_: `"name"`, `"imports"`, `"exports"`, `"dependencies"`, `"devDependencies"`.
 
 In practice it happens in 3 scenarios:
 
@@ -53,7 +51,7 @@ In practice it happens in 3 scenarios:
 2. You install a new dependency with `npm install <package-name>`
 3. You uninstall a dependency with `npm uninstall <package-name>`
 
-If you forgot to run `npm run generate-import-map`, some import might not be resolved which leads to the following symptoms:
+If you forgot to run `npm run generate-import-map`, you will see the following symptoms:
 
 - `import/no-unresolved` ESLint rule will start failing on these imports.
   ![stuff](./eslint_import_error_vscode.png)
