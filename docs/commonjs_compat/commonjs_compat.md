@@ -12,9 +12,9 @@ CommonJS backard compatibility consists into having a second version of your fil
 const { getMessage } = require("@jsenv/template-node-package")
 ```
 
-To keep this ability check [How to use commonJS backward compatibility](#how-to-commonJS-backward-compatibility). Otherwise see [How to remove commonJS backward compatibility](#how-to-remove-commonJS-backward-compatibility).
+To keep this ability check [How to use CommonJS compatibility](#how-to-use-commonJS-compatibility). Otherwise see [How to remove CommonJS compatibility](#how-to-remove-commonJS-compatibility).
 
-# How to use commonJS backward compatibility
+# How to use CommonJS compatibility
 
 When `npm publish` is executed, commonJS files are generated. This is because there is a `"prepublishOnly"` script in [package.json](../../package.json#L59) configured to execute `npm run dist`.
 
@@ -51,7 +51,7 @@ See also
 
 - Node.js documentation on [dual module packages](https://nodejs.org/dist/latest-v16.x/docs/api/packages.html#packages_approach_2_isolate_state)
 
-# How to remove build
+# How to remove CommonJS compatibility
 
 Follow these steps to remove the CommonJS build from this repository.
 
