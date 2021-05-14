@@ -6,15 +6,21 @@ This repository is meant to serve as a general template for how to set up reposi
 
 # Install checklist
 
-Go through this checklist after creating a repository with this template. It gives an overview of the files to ensure you know how to use them.
+Go through this checklist after creating a repository with this template.
 
-- [ ] Read [docs/eslint/eslint.md](./docs/eslint/eslint.md)
-- [ ] Read [docs/prettier/prettier.md](./docs/prettier/prettier.md)
-- [ ] Read [docs/production_mode/production_mode.md](./docs/production_mode/production_mode.md)
-- [ ] Read [docs/tests/tests.md](./docs/tests/tests.md)
-- [ ] Read [docs/coverage/coverage.md](./docs/coverage/coverage.md)
-- [ ] Read [docs/build/build.md](./docs/build/build.md)
-- [ ] Read [docs/auto_publish/auto_publish.md](./docs/auto_publish/auto_publish.md)
-- [ ] Read [docs/importmap/importmap.md](./docs/importmap/importmap.md)
-- [ ] Replace this readme by [readme.template.md](./readme.template.md)
 - [ ] Update fields in [package.json](./package.json), especially `"name"`, `"description"` and `"author".`
+
+- [ ] Review features
+
+  Overview of the available features, explaining how use or remove them.
+
+  - [Linting](./docs/linting/linting.md)
+  - [Formatting](./docs/formatting/formatting.md)
+  - [Production mode](./docs/production_mode/production_mode.md)
+  - [Testing](./docs/testing/testing.md)
+  - [Code coverage](./docs/coverage/coverage.md)
+  - [CommonJS backward compatibility](./docs/commonjs_compat/commonjs_compat.md)
+  - [npm auto publish](./docs/auto_publish/auto_publish.md)
+  - [ESM resolution for ESLint and VSCode](./docs/esm_resolution/esm_resolution.md)
+
+- [ ] Replace this readme by [readme.template.md](./readme.template.md)
