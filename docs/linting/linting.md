@@ -1,4 +1,4 @@
-# ESLint
+# Linting
 
 The codebase uses [ESLint](https://eslint.org) to lint files.
 
@@ -12,16 +12,9 @@ The ESLint configuration can be found in [.eslintrc.cjs](../../.eslintrc.cjs).
 
 It is recommended to install and use [vscode-eslint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint) to have **ESLint integrated in VSCode**.
 
-List of commands related to ESLint:
-
-<details>
-  <summary>npm run eslint-check</summary>
-
-This command is an alias to `eslint .`
+To execute ESLint on all files use the following command: `npm run eslint-check`
 
 ![stuff](./eslint-check-terminal.png)
-
-</details>
 
 # How to remove ESLint
 

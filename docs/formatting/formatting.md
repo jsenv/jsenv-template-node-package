@@ -1,8 +1,6 @@
-# Prettier
+# Formatting
 
 The codebase uses [prettier](https://prettier.io) to ensure files formatting is coherent and pretty.
-
-If prettier configuration is not respected, nothing special happen.
 
 If you want to keep prettier, check [How to use Prettier](#How-to-use-prettier). Otherwise see [How to remove prettier](#How-to-remove-prettier)
 
@@ -15,7 +13,7 @@ Install [prettier-vscode](https://marketplace.visualstudio.com/items?itemName=es
 This repository has pre-configured some commands related to prettier:
 
 <details>
-  <summary>npm run prettier-check</summary>
+  <summary><code>npm run prettier-check</code></summary>
 
 Logs files matching and not matching prettier formatting.
 
@@ -24,7 +22,7 @@ Logs files matching and not matching prettier formatting.
 </details>
 
 <details>
-  <summary>npm run prettier-format</summary>
+  <summary><code>npm run prettier-format</code></summary>
 
 Format all files in the project.
 
@@ -33,7 +31,7 @@ Format all files in the project.
 </details>
 
 <details>
-  <summary>npm run prettier-format-stage</summary>
+  <summary><code>npm run prettier-format-stage</code></summary>
 
 Format all files in the [git staging area](https://softwareengineering.stackexchange.com/a/119790)
 

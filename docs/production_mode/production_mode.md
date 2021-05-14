@@ -1,8 +1,8 @@
 # Production mode
 
-Production mode is the ability to make code behave differently depending if it's executed normally or in production mode.
+Production mode allows to write code specific to _production_ or _development_.
 
-It can be used to do things only during development (or production).
+Example of code specific to _development_:
 
 ```js
 import { DEV } from "#env"
@@ -12,7 +12,7 @@ if (DEV) {
 }
 ```
 
-Or to use a different value when production mode is enabled.
+Example of code acting differently between _development_ and _production_:
 
 ```js
 import { DATABASE_URL } from "#env"
@@ -24,9 +24,7 @@ This repository has preconfigured a production mode, if you want to keep this ab
 
 # How to use production mode
 
-The production mode is implemented using a node feature called [package conditions](https://nodejs.org/docs/latest-v15.x/api/packages.html#packages_resolving_user_conditions).
-
-Let's see an example with the `index.js` file below.
+Let's take an example with the `index.js` file below.
 
 ```js
 import { DEV } from "#env"
@@ -34,7 +32,7 @@ import { DEV } from "#env"
 console.log(DEV ? "development" : "production")
 ```
 
-Here is what happens when `index.js` is executed normally and with `--conditions=production`.
+See below the two scenarios and their result:
 
 ```console
 > node index.js
@@ -46,9 +44,9 @@ development
 production
 ```
 
-What happens is that Node.js remap `#env` to [env.dev.js](../../env.dev.js) by default and to [env.prod.js](../../env.prod.js) when `--conditions=production` is passed.
+What happens is that `node` remaps `#env` either to [env.dev.js](../../env.dev.js) or [env.prod.js](../../env.prod.js). This is configured by `"imports"` field in our [package.json](../../package.json#L28).
 
-This is configured by `"imports"` field in our [package.json](../../package.json#L28).
+This feature is called _package conditions_ on [Node.js documentation](https://nodejs.org/docs/latest-v15.x/api/packages.html#packages_resolving_user_conditions).
 
 # How to remove production mode
 
