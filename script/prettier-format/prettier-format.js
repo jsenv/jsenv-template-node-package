@@ -5,7 +5,6 @@ formatWithPrettier({
   ...jsenvConfig,
   projectFilesConfig: {
     ...jsenvProjectFilesConfig,
-    "./helpers/": true,
     "./**/coverage/": false,
     "./**/.jsenv/": false,
     "./**/dist/": false,
