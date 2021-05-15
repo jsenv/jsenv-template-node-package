@@ -1,8 +1,13 @@
 # Production mode
 
-Production mode allows to write code specific to _production_ or _development_.
+The goal of the production mode is to have a second way to execute your code. With it you have 2 ways of executing your code:
 
-Example of code specific to _development_:
+1. _default mode_
+2. _production mode_
+
+In _default mode_ you can do things specific to development and in _production mode_ do things specific to production.
+
+Example of code specific to development:
 
 ```js
 import { DEV } from "#env"
@@ -12,7 +17,7 @@ if (DEV) {
 }
 ```
 
-Example of code acting differently between _development_ and _production_:
+Example of code acting differently depending on the mode:
 
 ```js
 import { DATABASE_URL } from "#env"
@@ -20,7 +25,7 @@ import { DATABASE_URL } from "#env"
 console.log(`The database url is ${DATABASE_URL}`)
 ```
 
-This repository has preconfigured a production mode, if you want to keep this ability, check [How to use production mode](#how-to-use-production-mode). Otherwise see [How to remove production mode](#how-to-remove-production-mode).
+This repository has preconfigured a _production mode_, if you want to keep this ability, check [How to use production mode](#how-to-use-production-mode). Otherwise see [How to remove production mode](#how-to-remove-production-mode).
 
 # How to use production mode
 

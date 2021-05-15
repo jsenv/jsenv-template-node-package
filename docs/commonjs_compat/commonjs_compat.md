@@ -53,7 +53,7 @@ See also
 
 # How to remove CommonJS compatibility
 
-Follow these steps to remove the CommonJS build from this repository.
+Follow these steps to remove the CommonJS compatibility from this repository.
 
 1. Remove `&& npm run dist` from `"prepublishOnly"` in [package.json](../../package.json#L59)
 2. Remove `"dist"`, `"build-dev"`, `"build-prod"` from `"scripts"` in [package.json](../../package.json#L46)

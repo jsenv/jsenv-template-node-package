@@ -10,9 +10,7 @@ Go through this checklist after creating a repository with this template.
 
 - [ ] Update fields in [package.json](./package.json), especially `"name"`, `"description"` and `"author".`
 
-- [ ] Review features
-
-  Overview of the available features, explaining how use or remove them.
+- [ ] Check the available features and see how use or remove them.
 
   - [Linting](./docs/linting/linting.md)
   - [Formatting](./docs/formatting/formatting.md)

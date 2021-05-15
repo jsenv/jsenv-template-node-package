@@ -1,6 +1,6 @@
 # Formatting
 
-The codebase uses [prettier](https://prettier.io) to ensure files formatting is coherent and pretty.
+The codebase uses [prettier](https://prettier.io) to ensure files formatting is consistent and pretty.
 
 If you want to keep prettier, check [How to use Prettier](#How-to-use-prettier). Otherwise see [How to remove prettier](#How-to-remove-prettier)
 
