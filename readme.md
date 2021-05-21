@@ -8,7 +8,7 @@ This repository is meant to serve as a general template for how to set up reposi
 
 Go through this checklist after creating a repository with this template.
 
-- [ ] Update fields in [package.json](./package.json), especially `"name"`, `"description"` and `"author".`
+- [ ] Update fields in [package.json](./package.json), especially `"name"`, `"description"`, `"version"` and `"author".`
 
 - [ ] Check the available features and see how use or remove them.
 

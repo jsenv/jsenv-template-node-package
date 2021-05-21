@@ -41,7 +41,7 @@ It is possible to make ESLint and VSCode resolve imports like _node esm resoluti
 
 This is the responsability of the `npm run generate-import-map` command. This command executes [script/generate-import-map/generate-import-map.js](../../script/generate-import-map/generate-import-map.js) which is generating both the importmap and the _jsconfig.json_.
 
-In order to generate importmap a first time, `npm run generate-import-map` is configured to run after `npm install` by the `"postinstall"` script in [package.json](../../package.json#L58). This _postinstall_ script is not meant to be executed by the users of the package, only by the developpers. For this reason, _postinstall_ script is removed from _package.json_ before publishing on npm by `"prepublishOnly"` and restored by `"postpublish"`.
+In order to generate importmap a first time, `npm run generate-import-map` is configured to run after `npm install` by the `"postinstall"` script in [package.json](../../package.json#L59). This _postinstall_ script is not meant to be executed by the users of the package, only by the developpers. For this reason, _postinstall_ script is removed from _package.json_ before publishing on npm by `"prepublishOnly"` and restored by `"postpublish"`.
 
 You should rerun `npm run generate-import-map` when something impacting _node esm resolution algorithm_ happens. It means when any of the following fields has changed in your _package.json_: `"name"`, `"imports"`, `"exports"`, `"dependencies"`, `"devDependencies"`.
 
@@ -62,8 +62,8 @@ If you forgot to run `npm run generate-import-map`, you will see the following s
 
 If you want to remove ESM import resolution from the repository, follow the steps below.
 
-1. Remove `"node ./script/transform-package/remove-postinstall.js && "` from `"prepublishOnly"` in [package.json](../../package.json#L59)
-2. Remove `"postpublish"`, `"postinstall"` and `"generate-import-map"` from `"scripts"` in [package.json](../../package.json#L46)
+1. Remove `"node ./script/transform-package/remove-postinstall.js && "` from `"prepublishOnly"` in [package.json](../../package.json#L60)
+2. Remove `"postpublish"`, `"postinstall"` and `"generate-import-map"` from `"scripts"` in [package.json](../../package.json#L47)
 3. Delete [script/generate-import-map/](../../script/generate-import-map/) directory
 4. Replace `"import/resolver"` in [.eslintrc.cjs](../../.eslintrc.cjs#L43)
 
@@ -78,7 +78,7 @@ If you want to remove ESM import resolution from the repository, follow the step
 
    This step means ESLint will now resolve import using [CommonJS resolution algorithm](https://nodejs.org/dist/latest-v16.x/docs/api/modules.html#modules_all_together) instead of importmap.
 
-5. Remove `"@jsenv/importmap-eslint-resolver"` from `"devDependencies"` in [package.json](../../package.json#L68)
+5. Remove `"@jsenv/importmap-eslint-resolver"` from `"devDependencies"` in [package.json](../../package.json#L69)
 6. Remove `/importmap.dev.importmap` in [.gitignore](../../.gitignore#L23)
 7. Delete `./importmap.dev.importmap` file
 8. Remove `"paths"` from `./jsconfig.json` file

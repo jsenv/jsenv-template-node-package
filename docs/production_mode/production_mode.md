@@ -49,7 +49,7 @@ development
 production
 ```
 
-What happens is that `node` remaps `#env` either to [env.dev.js](../../env.dev.js) or [env.prod.js](../../env.prod.js). This is configured by `"imports"` field in our [package.json](../../package.json#L28).
+What happens is that `node` remaps `#env` either to [env.dev.js](../../env.dev.js) or [env.prod.js](../../env.prod.js). This is configured by `"imports"` field in our [package.json](../../package.json#L34).
 
 This feature is called _package conditions_ on [Node.js documentation](https://nodejs.org/docs/latest-v15.x/api/packages.html#packages_resolving_user_conditions).
 
@@ -58,9 +58,9 @@ This feature is called _package conditions_ on [Node.js documentation](https://n
 If you don't need the production mode you can remove it following the steps below.
 
 1. Remove all `#env` imports in files
-2. Remove `/env.dev.js` and `/env.prod.js` from `"files"` in [package.json](../../package.json#L39)
+2. Remove `/env.dev.js` and `/env.prod.js` from `"files"` in [package.json](../../package.json#L40)
 3. Delete [env.prod.js](../../env.prod.js)
 4. Delete [env.dev.js](../../env.dev.js)
 5. Remove `"node-prod"` from `testPlan` in [script/test/test.js](../../script/test/test.js#L18)
-6. Remove `"#env"` from `"imports"` in [package.json](../../package.json#L33)
+6. Remove `"#env"` from `"imports"` in [package.json](../../package.json#L34)
 7. Remove the launch configuration named `"node (prod)"` in [.vscode/launch.json](../../.vscode/launch.json#L26)

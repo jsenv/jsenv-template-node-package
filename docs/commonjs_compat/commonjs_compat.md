@@ -16,11 +16,11 @@ To keep this ability check [How to use CommonJS compatibility](#how-to-use-commo
 
 # How to use CommonJS compatibility
 
-When `npm publish` is runned, commonJS files are generated. This is because there is a `"prepublishOnly"` script in [package.json](../../package.json#L59) configured to run `npm run dist`.
+When `npm publish` is runned, commonJS files are generated. This is because there is a `"prepublishOnly"` script in [package.json](../../package.json#L60) configured to run `npm run dist`.
 
 The `npm run dist` command executes [script/build/build.js](../../script/build/build.js) which creates a commonJS build of the source files and write them into [dist/](../../dist/).
 
-When the package is used by `import` or `require`, Node.js knows which file to choose thanks to the `"exports"` field in our [package.json](../../package.json#L23).
+When the package is used by `import` or `require`, Node.js knows which file to choose thanks to the `"exports"` field in our [package.json](../../package.json#L24).
 
 List of commands related to the build:
 
@@ -55,10 +55,10 @@ See also
 
 Follow these steps to remove the CommonJS compatibility from this repository.
 
-1. Remove `&& npm run dist` from `"prepublishOnly"` in [package.json](../../package.json#L59)
-2. Remove `"dist"`, `"build-dev"`, `"build-prod"` from `"scripts"` in [package.json](../../package.json#L46)
+1. Remove `&& npm run dist` from `"prepublishOnly"` in [package.json](../../package.json#L60)
+2. Remove `"dist"`, `"build-dev"`, `"build-prod"` from `"scripts"` in [package.json](../../package.json#L47)
 3. Delete [script/build/](../../script/build/) directory
-4. Simplify `"."` from `"exports"` in [package.json](../../package.json#L18)
+4. Simplify `"."` from `"exports"` in [package.json](../../package.json#L24)
 
    ```diff
    - ".": {
@@ -71,12 +71,7 @@ Follow these steps to remove the CommonJS compatibility from this repository.
    + ".": "./main.js",
    ```
 
-5. Update `"main"` in [package.json](../../package.json#L38)
-
-   ```diff
-   - "main": "dist/dev/template_node_package.dev.cjs",
-   + "main": "main.js",
-   ```
+5. Remove `"main"` from [package.json](../../package.json#L39)
 
 6. Remove `"/dist/"` from `"files"` in [package.json](../../package.json#L40)
 
