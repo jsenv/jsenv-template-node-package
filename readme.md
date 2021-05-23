@@ -22,3 +22,8 @@ Go through this checklist after creating a repository with this template.
   - [import resolution](./docs/import_resolution/import_resolution.md)
 
 - [ ] Replace this readme by [readme.template.md](./readme.template.md)
+
+# Things to know
+
+- Node.js Long Term Support version should be used while coding and to use the package published on npm. At the time of writing this documentation it means version 14.17.0.
+- Default branch of the repository is named _main_. It can be renamed in repository settings
