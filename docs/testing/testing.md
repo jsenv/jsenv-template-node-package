@@ -6,7 +6,7 @@ All test files are inside the [test/](./test/) directory and ends with `.test.js
 
 If one or more test is failing, the main GitHub **workflow will fail** during [check tests](../../.github/workflows/main.yml#L45) step.
 
-Code coverage from test files is monitored, this is documented in [docs/coverage/coverage.md](../coverage/coverage.md).
+Code coverage from test files is monitored, this is documented in [docs/coverage/coverage.md](../coverage/coverage.md#coverage).
 
 If you want to keep test files check [How to use tests](#How-to-use-tests). Otherwise see [How to remove tests](#How-to-remove-tests)
 

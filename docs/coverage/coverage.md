@@ -58,7 +58,7 @@ If you want to enable this, see [Configure codecov](#Configure-codecov), otherwi
 
 # How to remove code coverage
 
-1. Follow steps from [Remove codecov](#Remove-codecov)
+1. Follow steps from [Remove codecov](#remove-codecov)
 2. Replace `npm run test-with-coverage` by `npm test` in [.github/workflows/main.yml](../../.github/workflows/main.yml#L46)
 3. Remove `"test-with-coverage"` from `"scripts"` in [package.json](../../package.json#L54)
 4. Remove `/coverage/` in [.gitignore](../../.gitignore#L9)
