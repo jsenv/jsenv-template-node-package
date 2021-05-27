@@ -12,13 +12,20 @@
 # publishing package on npm if needed. It will publish the npm package
 # using the token found in secrets.NPM_TOKEN. Be sure to create this
 # token in the GitHub repository.
+#
+# If you want to update this file it's recommended to use
+# a YAML validator such as https://marketplace.visualstudio.com/items?itemName=redhat.vscode-yaml
+# configured to validate this file with https://json.schemastore.org/github-workflow.json
 
 name: main
 
 on:
   pull_request:
-    - branches: "**"
-  push: main
+    branches:
+      - "**"
+  push:
+    branches:
+      - main
 
 jobs:
   test:
