@@ -4,9 +4,9 @@
 # For that reason it's runned on every pull request and push to main.
 #
 # It does the following:
-#  - Check linting passes (no eslint error on files)
-#  - Run tests and ensure none is failing
-#  - Update tests code coverage
+#  - Check lint passes (no eslint error on files)
+#  - Check tests passes (none is failing)
+#  - Upload code coverage from tests to codecov
 #
 # If all these steps are passing the workflow ends up
 # publishing package on npm if needed. It will publish the npm package
@@ -16,12 +16,8 @@
 name: main
 
 on:
-  push:
-    branches:
-      - main
-  pull_request:
-    branches:
-      - main
+  pull_request: "**"
+  push: main
 
 jobs:
   test:
