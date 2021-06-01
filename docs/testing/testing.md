@@ -4,7 +4,7 @@
 
 All test files are inside the [test/](./test/) directory and ends with `.test.js`.
 
-If one or more test is failing, the main GitHub **workflow will fail** during [check tests](../../.github/workflows/main.yml#L45) step.
+If one or more test is failing, the main GitHub **workflow will fail** during [check tests](../../.github/workflows/main.yml#L49) step.
 
 Code coverage from test files is monitored, this is documented in [docs/coverage/coverage.md](../coverage/coverage.md#coverage).
 
@@ -46,7 +46,7 @@ Test files are executed twice, the second execution ensure code specific to _pro
 
 If you don't need test or want to use an other test framework/library follow the steps below.
 
-1. Remove `check tests` step in [.github/workflows/main.yml](../../.github/workflows/main.yml#L45)
+1. Remove `check tests` step in [.github/workflows/main.yml](../../.github/workflows/main.yml#L49)
 2. Remove `"test"` and `"test-with-coverage"` from `"scripts"` in [package.json](../../package.json#L47)
 3. Delete [script/test/](../../script/test/) directory
 4. Remove `"@jsenv/assert"` from `"devDependencies"` [package.json](../../package.json#L64)

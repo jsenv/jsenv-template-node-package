@@ -38,7 +38,7 @@ HTML files can be opened in a browser to explore coverage. Red and yellow parts 
 
 ## Codecov
 
-To enable integration into GitHub, coverage must be sent to codecov after each push to a pull request or the repository main branch. This is done by `upload coverage` in [./.github/workflows/main.yml](../../.github/workflows/main.yml#L47).
+To enable integration into GitHub, coverage must be sent to codecov after each push to a pull request or the repository main branch. This is done by `upload coverage` in [./.github/workflows/main.yml](../../.github/workflows/main.yml#L51).
 
 If you want to enable this, see [Configure codecov](#Configure-codecov), otherwise see [Remove codecov](#Remove-codecov).
 
@@ -50,7 +50,7 @@ If you want to enable this, see [Configure codecov](#Configure-codecov), otherwi
 
 ### Remove codecov
 
-1. Remove `upload coverage` in [.github/workflows/main.yml](../../.github/workflows/main.yml#L47)
+1. Remove `upload coverage` in [.github/workflows/main.yml](../../.github/workflows/main.yml#L51)
 2. Remove `"@jsenv/codecov-upload"` from `"devDependencies"` in [package.json](../../package.json#L63)
 3. Remove `"upload-coverage"` from `"scripts"` in [package.json](../../package.json#L57)
 4. Delete [script/upload-coverage/](../../script/upload-coverage/) directory
@@ -59,7 +59,7 @@ If you want to enable this, see [Configure codecov](#Configure-codecov), otherwi
 # How to remove code coverage
 
 1. Follow steps from [Remove codecov](#remove-codecov)
-2. Replace `npm run test-with-coverage` by `npm test` in [.github/workflows/main.yml](../../.github/workflows/main.yml#L46)
+2. Replace `npm run test-with-coverage` by `npm test` in [.github/workflows/main.yml](../../.github/workflows/main.yml#L50)
 3. Remove `"test-with-coverage"` from `"scripts"` in [package.json](../../package.json#L54)
 4. Remove `/coverage/` in [.gitignore](../../.gitignore#L9)
 5. Remove `/coverage/` in [.eslintignore](../../.eslintignore#L13)
