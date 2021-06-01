@@ -28,9 +28,10 @@ Go through this checklist after creating a repository with this template.
   - [CommonJS compatibility](../docs/commonjs_compat/commonjs_compat.md#commonjs-compatibility)
   - [npm auto publish](../docs/auto_publish/auto_publish.md#auto-publish-on-npm)
 
-- [ ] Update the README at [README.md](../README.md)
-- [ ] Delete `.github/README.md` file
+- [ ] Update [README.md](../README.md)
+- [ ] Delete `.github/README.md`
 - [ ] Remove `"private": true` in [package.json](../package.json#L4)
+- [ ] Review [LICENSE](./LICENSE) and `"license"` in [package.json](../package.json#L6)
 
 # Things to know
 
