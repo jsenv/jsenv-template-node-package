@@ -1,4 +1,8 @@
-<!-- README for GitHub; the one for npm is README.md -->
+<!--
+README about the GitHub repository template.
+Once the template is used, this README should be
+deleted and only ../README.md should be kept
+-->
 
 # Node ESM package template
 
