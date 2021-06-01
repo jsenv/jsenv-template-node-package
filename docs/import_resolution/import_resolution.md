@@ -21,25 +21,21 @@ _self referencing_ is enabled by `"./*": "./*"` inside `"exports"` in our [packa
 
 ## ESLint and VSCode import resolution
 
-At the time of writing this documentation, there is no ESLint plugin and no VSCode extension implementing _node esm resolution algorithm_.
-
 It is mandatory to help ESLint with import resolution otherwise it will consider import as not resolved (or resolve them incorrectly).
 
 It is very valuable to help VSCode with import resolution so that <kbd>cmd</kbd>+`click` on a variable open the file where it is declared. It also improves VSCode autocompletion as it becomes aware of the code inside the imported file.
 
-If you want to keep this, check [How ESLint and VSCode resolve imports](#How-ESLint-and-VSCode-resolve-imports). Otherwise see [How to remove ESM resolution from ESLint and VSCode](#How-to-remove-ESM-resolution-from-ESLint-and-VSCode).
+However, at the time of writing this documentation, there is no ESLint plugin and no VSCode extension implementing _node esm resolution algorithm_.
+
+Fortunately, it's possible to make ESLint and VSCode resolve import like _node esm resolution algorithm_. If you want to keep this, check [How ESLint and VSCode resolve imports](#How-ESLint-and-VSCode-resolve-imports). Otherwise see [How to remove ESM resolution from ESLint and VSCode](#How-to-remove-ESM-resolution-from-ESLint-and-VSCode).
 
 ### How ESLint and VSCode resolve imports
 
-Knowing that:
-
 1. ESLint is configured to use an importmap file to resolve import by `importMapFileRelativeUrl` in [.eslintrc.cjs](../../.eslintrc.cjs#L48).
 
-2. VSCode can be configured to customize import resolution in a file named _jsconfig.json_.
+2. VSCode import resolution can be configured in a file named _jsconfig.json_.
 
-It is possible to make ESLint and VSCode resolve imports like _node esm resolution algorithm_ by generating the correct importmap and _jsconfig.json_.
-
-This is the responsability of the `npm run generate-import-map` command. This command executes [script/generate-import-map/generate-import-map.js](../../script/generate-import-map/generate-import-map.js) which is generating both the importmap and the _jsconfig.json_.
+Generating the correct importmap and _jsconfig.json_ is the responsability of `npm run generate-import-map` command. This command executes [script/generate-import-map/generate-import-map.js](../../script/generate-import-map/generate-import-map.js) which is generating both the importmap and the _jsconfig.json_.
 
 In order to generate importmap a first time, `npm run generate-import-map` is configured to run after `npm install` by the `"postinstall"` script in [package.json](../../package.json#L59). This _postinstall_ script is not meant to be executed by the users of the package, only by the developpers. For this reason, _postinstall_ script is removed from _package.json_ before publishing on npm by `"prepublishOnly"` and restored by `"postpublish"`.
 

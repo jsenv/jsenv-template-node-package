@@ -19,14 +19,14 @@ Go through this checklist after creating a repository with this template.
 - [ ] Update fields in [package.json](../package.json), especially `"name"`, `"description"`, `"version"` and `"author".`
 - [ ] Check the available features and see how use or remove them.
 
-  - [Linting](../docs/linting/linting.md#linting)
   - [Formatting](../docs/formatting/formatting.md#formatting)
+  - [Linting](../docs/linting/linting.md#linting)
+  - [import resolution](../docs/import_resolution/import_resolution.md#import-resolution)
   - [Production mode](../docs/production_mode/production_mode.md#production-mode)
   - [Testing](../docs/testing/testing.md#testing)
   - [Code coverage](../docs/coverage/coverage.md#coverage)
   - [CommonJS compatibility](../docs/commonjs_compat/commonjs_compat.md#commonjs-compatibility)
   - [npm auto publish](../docs/auto_publish/auto_publish.md#auto-publish-on-npm)
-  - [import resolution](../docs/import_resolution/import_resolution.md#import-resolution)
 
 - [ ] Update the README at [README.md](../README.md)
 - [ ] Delete `.github/README.md` file
