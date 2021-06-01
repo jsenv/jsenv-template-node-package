@@ -34,13 +34,6 @@ The secret name must be `NPM_TOKEN` or you need to update `secrets.NPM_TOKEN` in
 
 </details>
 
-<details>
-  <summary>3. Remove <code>"private": true</code> from <i>package.json</i></summary>
-
-Remove `"private": true` in [package.json](../../package.json#L4)
-
-</details>
-
 ## Why auto publish ?
 
 As a package author, I was sick of running `npm publish` several times per day. Then, I discovered continuous delivery workflow where code is deployed to production by pushing to the `prod` branch.
