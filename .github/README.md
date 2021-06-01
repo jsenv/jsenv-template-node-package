@@ -29,7 +29,7 @@ Go through this checklist after creating a repository with this template.
   - [import resolution](../docs/import_resolution/import_resolution.md#import-resolution)
 
 - [ ] Update the README at [README.md](../README.md)
-- [ ] Delete this readme file `.github/README.md`
+- [ ] Delete `.github/README.md` file
 - [ ] Remove `"private": true` in [package.json](../package.json#L4)
 
 # Things to know
