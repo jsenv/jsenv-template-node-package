@@ -8,15 +8,6 @@ Node package description.
 [![github main](https://github.com/jsenv/jsenv-template-node-package/workflows/main/badge.svg)](https://github.com/jsenv/jsenv-template-node-package/actions?workflow=main)
 [![codecov coverage](https://codecov.io/gh/jsenv/jsenv-template-node-package/branch/main/graph/badge.svg)](https://codecov.io/gh/jsenv/jsenv-template-node-package)
 
-# Table of contents
-
-- [Presentation](#Presentation)
-- [Installation](#Installation)
-- [Example](#Example)
-- [API](#API)
-- [Production mode](#production-mode)
-- [Development](#Development)
-
 # Presentation
 
 ```js

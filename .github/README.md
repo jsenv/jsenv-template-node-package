@@ -31,7 +31,7 @@ Go through this checklist after creating a repository with this template.
 - [ ] Update [README.md](../README.md)
 - [ ] Delete `.github/README.md`
 - [ ] Remove `"private": true` in [package.json](../package.json#L4)
-- [ ] Review [LICENSE](./LICENSE) and `"license"` in [package.json](../package.json#L6)
+- [ ] Review [LICENSE](../LICENSE) and `"license"` in [package.json](../package.json#L6)
 
 # Things to know
 
