@@ -26,7 +26,7 @@ Go through this checklist after creating a repository with this template.
   - [Testing](../docs/testing/testing.md#testing)
   - [Code coverage](../docs/coverage/coverage.md#coverage)
   - [CommonJS compatibility](../docs/commonjs_compat/commonjs_compat.md#commonjs-compatibility)
-  - [npm auto publish](../docs/auto_publish/auto_publish.md#auto-publish-on-npm)
+  - [Publishing](../docs/publishing/publishing.md#publishing)
 
 - [ ] Update [README.md](../README.md)
 - [ ] Delete `.github/README.md`
