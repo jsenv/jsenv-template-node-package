@@ -6,7 +6,7 @@ The codebase is written in esm and meant to used as such with the `import` keywo
 import { getMessage } from "@jsenv/template-node-package"
 ```
 
-CommonJS compatibility consists into having a second version of your files generated in commonJS. This allows a user of the package to also be able to use `require`:
+CommonJS compatibility consists into having a second version of your files generated in CommonJS. This allows a user of the package to also be able to use `require`:
 
 ```js
 const { getMessage } = require("@jsenv/template-node-package")
@@ -16,11 +16,11 @@ To keep this ability check [How to use CommonJS compatibility](#how-to-use-commo
 
 # How to use CommonJS compatibility
 
-When `npm publish` is runned, commonJS files are generated. This is because there is a `"prepublishOnly"` script in [package.json](../../package.json#L60) configured to run `npm run dist`.
+When `npm publish` is runned, commonJS files are generated. This is done by a `"prepublishOnly"` script in [package.json](../../package.json#L60) configured to run `npm run dist`.
 
 The `npm run dist` command executes [script/build/build.js](../../script/build/build.js) which creates a commonJS build of the source files and write them into [dist/](../../dist/).
 
-When the package is used by `import` or `require`, Node.js knows which file to choose thanks to the `"exports"` field in our [package.json](../../package.json#L24).
+When the package is used by `import` or `require`, Node.js knows which file to choose thanks to the `"exports"` field in the [package.json](../../package.json#L24).
 
 List of commands related to the build:
 
